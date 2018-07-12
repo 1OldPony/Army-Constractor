@@ -1,0 +1,17 @@
+﻿body {
+}
+.menu {
+    background: #fbf0a3;
+    width: 20%;
+    height: 100%;
+    margin-left: 0px;
+    border: 4px double #ff0000;
+    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
+    font-size: 14pt;
+}
+.actionlinks {
+    color: black;
+    text-decoration: none; 
+    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
+    font-size: 14pt;
+}

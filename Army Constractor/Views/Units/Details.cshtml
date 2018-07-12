@@ -1,0 +1,98 @@
+﻿@model Army_Constractor.Models.Unit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Unit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Armor.ArmorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Armor.ArmorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseUnit.BaseUnitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseUnit.BaseUnitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeleeWeapon.MelWeapName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeleeWeapon.MelWeapName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mount.MountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mount.MountName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RangeWeapon.RanWeapName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RangeWeapon.RanWeapName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shield.ShieldName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shield.ShieldName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondWeaponID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondWeaponID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfCombatants)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfCombatants)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UnitID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

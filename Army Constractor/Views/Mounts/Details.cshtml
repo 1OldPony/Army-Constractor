@@ -1,0 +1,98 @@
+﻿@model Army_Constractor.Models.Mount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountRange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountRank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountRank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountArmorIgnore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountArmorIgnore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountAbsorb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountAbsorb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountDefBonus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountDefBonus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountAttBonus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountAttBonus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountMove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountMove)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flying)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MountID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

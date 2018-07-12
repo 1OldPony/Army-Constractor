@@ -1,0 +1,104 @@
+﻿@model Army_Constractor.Models.Mount
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Mount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountRange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountRank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountRank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountArmorIgnore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountArmorIgnore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountAbsorb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountAbsorb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountDefBonus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountDefBonus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountAttBonus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountAttBonus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MountMove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MountMove)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flying)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

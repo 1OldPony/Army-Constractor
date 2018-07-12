@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Army_Constractor.Models.MeleeWeapon>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MelWeapName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Range)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MelWeapArmorIgnore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TwoHanded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MelWeapName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Range)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MelWeapArmorIgnore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwoHanded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pare)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MeleeWeaponID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MeleeWeaponID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MeleeWeaponID })
+        </td>
+    </tr>
+}
+
+</table>

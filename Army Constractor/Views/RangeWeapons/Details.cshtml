@@ -1,0 +1,50 @@
+﻿@model Army_Constractor.Models.RangeWeapon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RangeWeapon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RanWeapName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RanWeapName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RanWeapRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RanWeapRange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RanWeapArmorIgnore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RanWeapArmorIgnore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RangeWeaponID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

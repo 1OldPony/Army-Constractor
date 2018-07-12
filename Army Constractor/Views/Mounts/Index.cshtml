@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Army_Constractor.Models.Mount>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MountName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountRange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountRank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountArmorIgnore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountAbsorb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountDefBonus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountAttBonus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MountMove)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flying)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountRange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountRank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountArmorIgnore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountAbsorb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountDefBonus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountAttBonus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MountMove)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flying)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MountID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MountID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MountID })
+        </td>
+    </tr>
+}
+
+</table>

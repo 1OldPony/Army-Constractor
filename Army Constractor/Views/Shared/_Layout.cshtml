@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/ProbeStyleSheet.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>@Html.ActionLink("Армии", "Index", "Armies")</li>
+            <li>@Html.ActionLink("Балуюсь со стилями в экшнлинках", "Index", "Armies", null, new { @class = "actionlinks" }) </li>
+            <li>@Html.ActionLink("Отряды", "Index", "Units")</li>
+            <li>@Html.ActionLink("Оружие ближнего боя", "Index", "MeleeWeapons")</li>
+            <li>@Html.ActionLink("Оружие дальнего боя", "Index", "RangeWeapons")</li>
+            <li>@Html.ActionLink("Броня", "Index", "Armors")</li>
+            <li>@Html.ActionLink("Ездовые животные", "Index", "Mounts")</li>
+            <li>@Html.ActionLink("Щиты", "Index", "Shields")</li>
+            <li>@Html.ActionLink("Юниты", "Index", "BaseUnits")</li>
+        </ul>
+    </div>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

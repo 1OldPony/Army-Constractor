@@ -1,0 +1,66 @@
+﻿@model Army_Constractor.Models.MeleeWeapon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MeleeWeapon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MelWeapName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MelWeapName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Range)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Range)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MelWeapArmorIgnore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MelWeapArmorIgnore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwoHanded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwoHanded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MeleeWeaponID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
