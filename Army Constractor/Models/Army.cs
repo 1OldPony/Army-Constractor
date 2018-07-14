@@ -9,8 +9,8 @@ namespace Army_Constractor.Models
     {
         public virtual int ArmyID { get; set; }
         public virtual string ArmyName { get; set; }
-        public virtual int UnitsInArmyID { get; set; }
         public virtual string Description { get; set; }
-        public virtual UnitsInArmy UnitsInArmy { get; set; }
+
+        public virtual List<UnitsInArmy> UnitsInArmies { get; set; }
     }
 }

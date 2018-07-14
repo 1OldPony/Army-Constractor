@@ -21,7 +21,7 @@ namespace Army_Constractor.Models
 
         public System.Data.Entity.DbSet<Army_Constractor.Models.Army> Armies { get; set; }
         public System.Data.Entity.DbSet<Army_Constractor.Models.Armor> Armors { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.BaseUnit> BaseUnits { get; set; }
+        public System.Data.Entity.DbSet<Army_Constractor.Models.RecrutType> RecrutTypes { get; set; }
         public System.Data.Entity.DbSet<Army_Constractor.Models.MeleeWeapon> MeleeWeapons { get; set; }
         public System.Data.Entity.DbSet<Army_Constractor.Models.Mount> Mounts { get; set; }
         public System.Data.Entity.DbSet<Army_Constractor.Models.RangeWeapon> RangeWeapons { get; set; }

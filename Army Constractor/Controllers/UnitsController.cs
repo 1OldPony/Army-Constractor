@@ -17,7 +17,7 @@ namespace Army_Constractor.Controllers
         // GET: Units
         public ActionResult Index()
         {
-            var units = db.Units.Include(u => u.Armor).Include(u => u.BaseUnit).Include(u => u.MeleeWeapon).Include(u => u.Mount).Include(u => u.RangeWeapon).Include(u => u.Shield);
+            var units = db.Units.Include(u => u.Armor).Include(u => u.RecrutType).Include(u => u.MeleeWeapon).Include(u => u.Mount).Include(u => u.RangeWeapon).Include(u => u.Shield);
             return View(units.ToList());
         }
 
@@ -40,7 +40,7 @@ namespace Army_Constractor.Controllers
         public ActionResult Create()
         {
             ViewBag.ArmorID = new SelectList(db.Armors, "ArmorID", "ArmorName");
-            ViewBag.BaseUnitID = new SelectList(db.BaseUnits, "BaseUnitID", "BaseUnitName");
+            ViewBag.BaseUnitID = new SelectList(db.RecrutTypes, "BaseUnitID", "BaseUnitName");
             ViewBag.MeleeWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName");
             ViewBag.MountID = new SelectList(db.Mounts, "MountID", "MountName");
             ViewBag.RangeWeaponID = new SelectList(db.RangeWeapons, "RangeWeaponID", "RanWeapName");
@@ -63,7 +63,7 @@ namespace Army_Constractor.Controllers
             }
 
             ViewBag.ArmorID = new SelectList(db.Armors, "ArmorID", "ArmorName", unit.ArmorID);
-            ViewBag.BaseUnitID = new SelectList(db.BaseUnits, "BaseUnitID", "BaseUnitName", unit.BaseUnitID);
+            ViewBag.BaseUnitID = new SelectList(db.RecrutTypes, "BaseUnitID", "BaseUnitName", unit.RecrutTypeID);
             ViewBag.MeleeWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.MeleeWeaponID);
             ViewBag.MountID = new SelectList(db.Mounts, "MountID", "MountName", unit.MountID);
             ViewBag.RangeWeaponID = new SelectList(db.RangeWeapons, "RangeWeaponID", "RanWeapName", unit.RangeWeaponID);
@@ -84,7 +84,7 @@ namespace Army_Constractor.Controllers
                 return HttpNotFound();
             }
             ViewBag.ArmorID = new SelectList(db.Armors, "ArmorID", "ArmorName", unit.ArmorID);
-            ViewBag.BaseUnitID = new SelectList(db.BaseUnits, "BaseUnitID", "BaseUnitName", unit.BaseUnitID);
+            ViewBag.BaseUnitID = new SelectList(db.RecrutTypes, "BaseUnitID", "BaseUnitName", unit.RecrutTypeID);
             ViewBag.MeleeWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.MeleeWeaponID);
             ViewBag.MountID = new SelectList(db.Mounts, "MountID", "MountName", unit.MountID);
             ViewBag.RangeWeaponID = new SelectList(db.RangeWeapons, "RangeWeaponID", "RanWeapName", unit.RangeWeaponID);
@@ -106,7 +106,7 @@ namespace Army_Constractor.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ArmorID = new SelectList(db.Armors, "ArmorID", "ArmorName", unit.ArmorID);
-            ViewBag.BaseUnitID = new SelectList(db.BaseUnits, "BaseUnitID", "BaseUnitName", unit.BaseUnitID);
+            ViewBag.BaseUnitID = new SelectList(db.RecrutTypes, "BaseUnitID", "BaseUnitName", unit.RecrutTypeID);
             ViewBag.MeleeWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.MeleeWeaponID);
             ViewBag.MountID = new SelectList(db.Mounts, "MountID", "MountName", unit.MountID);
             ViewBag.RangeWeaponID = new SelectList(db.RangeWeapons, "RangeWeaponID", "RanWeapName", unit.RangeWeaponID);

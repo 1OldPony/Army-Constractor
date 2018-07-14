@@ -17,7 +17,7 @@ namespace Army_Constractor.Controllers
         // GET: BaseUnits
         public ActionResult Index()
         {
-            return View(db.BaseUnits.ToList());
+            return View(db.RecrutTypes.ToList());
         }
 
         // GET: BaseUnits/Details/5
@@ -27,7 +27,7 @@ namespace Army_Constractor.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BaseUnit baseUnit = db.BaseUnits.Find(id);
+            RecrutType baseUnit = db.RecrutTypes.Find(id);
             if (baseUnit == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace Army_Constractor.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BaseUnitID,BaseUnitName,BaseUnitRank,BaseUnitAttBonus,BaseUnitDefBonus,BaseUnitAbsorb,BaseUnitArmorIgnore,BaseUnitMove,BaseUnitBraveryBonus,Description")] BaseUnit baseUnit)
+        public ActionResult Create([Bind(Include = "BaseUnitID,BaseUnitName,BaseUnitRank,BaseUnitAttBonus,BaseUnitDefBonus,BaseUnitAbsorb,BaseUnitArmorIgnore,BaseUnitMove,BaseUnitBraveryBonus,Description")] RecrutType baseUnit)
         {
             if (ModelState.IsValid)
             {
-                db.BaseUnits.Add(baseUnit);
+                db.RecrutTypes.Add(baseUnit);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace Army_Constractor.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BaseUnit baseUnit = db.BaseUnits.Find(id);
+            RecrutType baseUnit = db.RecrutTypes.Find(id);
             if (baseUnit == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace Army_Constractor.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BaseUnitID,BaseUnitName,BaseUnitRank,BaseUnitAttBonus,BaseUnitDefBonus,BaseUnitAbsorb,BaseUnitArmorIgnore,BaseUnitMove,BaseUnitBraveryBonus,Description")] BaseUnit baseUnit)
+        public ActionResult Edit([Bind(Include = "BaseUnitID,BaseUnitName,BaseUnitRank,BaseUnitAttBonus,BaseUnitDefBonus,BaseUnitAbsorb,BaseUnitArmorIgnore,BaseUnitMove,BaseUnitBraveryBonus,Description")] RecrutType baseUnit)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Army_Constractor.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BaseUnit baseUnit = db.BaseUnits.Find(id);
+            RecrutType baseUnit = db.RecrutTypes.Find(id);
             if (baseUnit == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace Army_Constractor.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BaseUnit baseUnit = db.BaseUnits.Find(id);
-            db.BaseUnits.Remove(baseUnit);
+            RecrutType baseUnit = db.RecrutTypes.Find(id);
+            db.RecrutTypes.Remove(baseUnit);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

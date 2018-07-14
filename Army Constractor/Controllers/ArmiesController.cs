@@ -17,8 +17,7 @@ namespace Army_Constractor.Controllers
         // GET: Armies
         public ActionResult Index()
         {
-            var armies = db.Armies.Include(a => a.UnitsInArmy);
-            return View(armies.ToList());
+            return View(db.Armies.ToList());
         }
 
         // GET: Armies/Details/5
@@ -39,7 +38,6 @@ namespace Army_Constractor.Controllers
         // GET: Armies/Create
         public ActionResult Create()
         {
-            ViewBag.UnitsInArmyID = new SelectList(db.UnitsInArmies, "UnitsInArmyID", "UnitsInArmyID");
             return View();
         }
 
@@ -57,7 +55,6 @@ namespace Army_Constractor.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UnitsInArmyID = new SelectList(db.UnitsInArmies, "UnitsInArmyID", "UnitsInArmyID", army.UnitsInArmyID);
             return View(army);
         }
 
@@ -73,7 +70,6 @@ namespace Army_Constractor.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UnitsInArmyID = new SelectList(db.UnitsInArmies, "UnitsInArmyID", "UnitsInArmyID", army.UnitsInArmyID);
             return View(army);
         }
 
@@ -90,7 +86,6 @@ namespace Army_Constractor.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UnitsInArmyID = new SelectList(db.UnitsInArmies, "UnitsInArmyID", "UnitsInArmyID", army.UnitsInArmyID);
             return View(army);
         }
 

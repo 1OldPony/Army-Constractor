@@ -174,11 +174,15 @@
     <Compile Include="Migrations\201807121951208_AfterTheFall.Designer.cs">
       <DependentUpon>201807121951208_AfterTheFall.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807131808030_WhoKnows.cs" />
+    <Compile Include="Migrations\201807131808030_WhoKnows.Designer.cs">
+      <DependentUpon>201807131808030_WhoKnows.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\Army.cs" />
     <Compile Include="Models\ArmyConstractorDB.cs" />
-    <Compile Include="Models\BaseUnit.cs" />
+    <Compile Include="Models\RecrutType.cs" />
     <Compile Include="Models\MeleeWeapon.cs" />
     <Compile Include="Models\Mount.cs" />
     <Compile Include="Models\RangeWeapon.cs" />
@@ -292,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807121951208_AfterTheFall.resx">
       <DependentUpon>201807121951208_AfterTheFall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807131808030_WhoKnows.resx">
+      <DependentUpon>201807131808030_WhoKnows.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
