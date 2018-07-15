@@ -156,27 +156,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArmiesController.cs" />
     <Compile Include="Controllers\ArmorsController.cs" />
-    <Compile Include="Controllers\BaseUnitsController.cs" />
     <Compile Include="Controllers\MeleeWeaponsController.cs" />
     <Compile Include="Controllers\MountsController.cs" />
     <Compile Include="Controllers\RangeWeaponsController.cs" />
+    <Compile Include="Controllers\RecrutTypesController.cs" />
     <Compile Include="Controllers\ShieldsController.cs" />
     <Compile Include="Controllers\UnitsController.cs" />
-    <Compile Include="Controllers\UnitsInArmiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807031838343_MigrateDB.cs" />
-    <Compile Include="Migrations\201807031838343_MigrateDB.Designer.cs">
-      <DependentUpon>201807031838343_MigrateDB.cs</DependentUpon>
+    <Compile Include="Migrations\201807151506528_First.cs" />
+    <Compile Include="Migrations\201807151506528_First.Designer.cs">
+      <DependentUpon>201807151506528_First.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807121951208_AfterTheFall.cs" />
-    <Compile Include="Migrations\201807121951208_AfterTheFall.Designer.cs">
-      <DependentUpon>201807121951208_AfterTheFall.cs</DependentUpon>
+    <Compile Include="Migrations\201807151658454_First1.cs" />
+    <Compile Include="Migrations\201807151658454_First1.Designer.cs">
+      <DependentUpon>201807151658454_First1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807131808030_WhoKnows.cs" />
-    <Compile Include="Migrations\201807131808030_WhoKnows.Designer.cs">
-      <DependentUpon>201807131808030_WhoKnows.cs</DependentUpon>
+    <Compile Include="Migrations\201807151743593_DisplayNames.cs" />
+    <Compile Include="Migrations\201807151743593_DisplayNames.Designer.cs">
+      <DependentUpon>201807151743593_DisplayNames.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Armor.cs" />
@@ -233,11 +232,11 @@
     <Content Include="Views\Armors\Details.cshtml" />
     <Content Include="Views\Armors\Edit.cshtml" />
     <Content Include="Views\Armors\Index.cshtml" />
-    <Content Include="Views\BaseUnits\Create.cshtml" />
-    <Content Include="Views\BaseUnits\Delete.cshtml" />
-    <Content Include="Views\BaseUnits\Details.cshtml" />
-    <Content Include="Views\BaseUnits\Edit.cshtml" />
-    <Content Include="Views\BaseUnits\Index.cshtml" />
+    <Content Include="Views\Armies\Create.cshtml" />
+    <Content Include="Views\Armies\Delete.cshtml" />
+    <Content Include="Views\Armies\Details.cshtml" />
+    <Content Include="Views\Armies\Edit.cshtml" />
+    <Content Include="Views\Armies\Index.cshtml" />
     <Content Include="Views\MeleeWeapons\Create.cshtml" />
     <Content Include="Views\MeleeWeapons\Delete.cshtml" />
     <Content Include="Views\MeleeWeapons\Details.cshtml" />
@@ -253,6 +252,11 @@
     <Content Include="Views\RangeWeapons\Details.cshtml" />
     <Content Include="Views\RangeWeapons\Edit.cshtml" />
     <Content Include="Views\RangeWeapons\Index.cshtml" />
+    <Content Include="Views\RecrutTypes\Create.cshtml" />
+    <Content Include="Views\RecrutTypes\Delete.cshtml" />
+    <Content Include="Views\RecrutTypes\Details.cshtml" />
+    <Content Include="Views\RecrutTypes\Edit.cshtml" />
+    <Content Include="Views\RecrutTypes\Index.cshtml" />
     <Content Include="Views\Shields\Create.cshtml" />
     <Content Include="Views\Shields\Delete.cshtml" />
     <Content Include="Views\Shields\Details.cshtml" />
@@ -263,16 +267,6 @@
     <Content Include="Views\Units\Details.cshtml" />
     <Content Include="Views\Units\Edit.cshtml" />
     <Content Include="Views\Units\Index.cshtml" />
-    <Content Include="Views\UnitsInArmies\Create.cshtml" />
-    <Content Include="Views\UnitsInArmies\Delete.cshtml" />
-    <Content Include="Views\UnitsInArmies\Details.cshtml" />
-    <Content Include="Views\UnitsInArmies\Edit.cshtml" />
-    <Content Include="Views\UnitsInArmies\Index.cshtml" />
-    <Content Include="Views\Armies\Create.cshtml" />
-    <Content Include="Views\Armies\Delete.cshtml" />
-    <Content Include="Views\Armies\Details.cshtml" />
-    <Content Include="Views\Armies\Edit.cshtml" />
-    <Content Include="Views\Armies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,14 +285,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807031838343_MigrateDB.resx">
-      <DependentUpon>201807031838343_MigrateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807151506528_First.resx">
+      <DependentUpon>201807151506528_First.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807121951208_AfterTheFall.resx">
-      <DependentUpon>201807121951208_AfterTheFall.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807151658454_First1.resx">
+      <DependentUpon>201807151658454_First1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807131808030_WhoKnows.resx">
-      <DependentUpon>201807131808030_WhoKnows.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807151743593_DisplayNames.resx">
+      <DependentUpon>201807151743593_DisplayNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

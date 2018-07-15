@@ -3,7 +3,7 @@ namespace Army_Constractor.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class WhoKnows : DbMigration
+    public partial class DisplayNames : DbMigration
     {
         public override void Up()
         {

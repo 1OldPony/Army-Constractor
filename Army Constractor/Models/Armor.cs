@@ -9,13 +9,22 @@ namespace Army_Constractor.Models
 {
     public class Armor
     {
-        public virtual int ArmorID { get; set; }
-        [Required(ErrorMessage = "Поле должно быть установлено")]
-        public virtual string ArmorName { get; set; }
-        [Required(ErrorMessage = "Поле должно быть установлено")]
+        public int ArmorID { get; set; }
+
+        [Required(ErrorMessage = "Необходимо ввести название")]
+        [Display (Name = "Доспех") ]
+        public string ArmorName { get; set; }
+
+        [Required(ErrorMessage = "Эта характеристика необходима")]
         [Range(1,5)]
-        public virtual int ArmorAbsorb { get; set; }
-        public virtual int ArmorMoveDecrease { get; set; }
-        public virtual string Description { get; set; }
+        [Display(Name = "Поглощение урона")]
+        public int ArmorAbsorb { get; set; }
+
+        [Range(1, 5)]
+        [Display(Name = "Снижение скорости")]
+        public int? ArmorMoveDecrease { get; set; }
+
+        [Display(Name = "Описание")]
+        public string Description { get; set; }
     }
 }

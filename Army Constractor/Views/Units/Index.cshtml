@@ -15,16 +15,13 @@
             @Html.DisplayNameFor(model => model.Armor.ArmorName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BaseUnit.BaseUnitName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MeleeWeapon.MelWeapName)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Mount.MountName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RangeWeapon.RanWeapName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutType.RecrutTypeName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Shield.ShieldName)
@@ -33,8 +30,11 @@
             @Html.DisplayNameFor(model => model.UnitName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SecondWeaponID)
+            @Html.DisplayNameFor(model => model.MeleeWeapon.MelWeapName)
         </th>
+        @*@<th>
+            @Html.DisplayNameFor(model => model.SecondWeapon.MelWeapName)
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.NumberOfCombatants)
         </th>
@@ -50,16 +50,13 @@
             @Html.DisplayFor(modelItem => item.Armor.ArmorName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BaseUnit.BaseUnitName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MeleeWeapon.MelWeapName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Mount.MountName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.RangeWeapon.RanWeapName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutType.RecrutTypeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Shield.ShieldName)
@@ -68,8 +65,11 @@
             @Html.DisplayFor(modelItem => item.UnitName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SecondWeaponID)
+            @Html.DisplayFor(modelItem => item.MeleeWeapon.MelWeapName)
         </td>
+        @*@<td>
+            @Html.DisplayFor(modelItem => item.SecondWeapon.MelWeapName)
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.NumberOfCombatants)
         </td>

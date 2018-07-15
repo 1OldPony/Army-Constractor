@@ -7,13 +7,13 @@ namespace Army_Constractor.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class MigrateDB : IMigrationMetadata
+    public sealed partial class DisplayNames : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrateDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DisplayNames));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807031838343_MigrateDB"; }
+            get { return "201807151743593_DisplayNames"; }
         }
         
         string IMigrationMetadata.Source

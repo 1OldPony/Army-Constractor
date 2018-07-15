@@ -9,8 +9,7 @@ namespace Army_Constractor.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Army_Constractor.Models.ArmyConstractorDB context)
@@ -20,14 +19,13 @@ namespace Army_Constractor.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            context.Armors.AddOrUpdate(
-            //a => a.ArmorName,
-            new Models.Armor { ArmorName = "Кожаный жилет", ArmorAbsorb = 1 },
-            new Models.Armor { ArmorName = "Кожанная куртка", ArmorAbsorb = 2 },
-            new Models.Armor { ArmorName = "Стега", ArmorAbsorb = 3 },
-            new Models.Armor { ArmorName = "Стега толстая", ArmorAbsorb = 4, ArmorMoveDecrease = 1 },
-            new Models.Armor { ArmorName = "Тегиляй", ArmorAbsorb = 5, ArmorMoveDecrease = 2 }
-            );
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }

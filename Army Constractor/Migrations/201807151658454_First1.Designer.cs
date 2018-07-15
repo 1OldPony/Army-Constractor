@@ -7,18 +7,18 @@ namespace Army_Constractor.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AfterTheFall : IMigrationMetadata
+    public sealed partial class First1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AfterTheFall));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(First1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807121951208_AfterTheFall"; }
+            get { return "201807151658454_First1"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

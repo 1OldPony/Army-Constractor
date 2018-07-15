@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Army_Constractor.Models.RecrutType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutTypeRank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutTypeAttBonus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutTypeDefBonus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutTypeAbsorb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutTypeArmorIgnore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutTypeMove)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecrutTypeBraveryBonus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutTypeRank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutTypeAttBonus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutTypeDefBonus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutTypeAbsorb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutTypeMove)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecrutTypeBraveryBonus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RecrutTypeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RecrutTypeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RecrutTypeID })
+        </td>
+    </tr>
+}
+
+</table>

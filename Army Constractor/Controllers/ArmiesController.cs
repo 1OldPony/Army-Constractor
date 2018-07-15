@@ -46,7 +46,7 @@ namespace Army_Constractor.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ArmyID,ArmyName,UnitsInArmyID,Description")] Army army)
+        public ActionResult Create([Bind(Include = "ArmyID,ArmyName,Description")] Army army)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Army_Constractor.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ArmyID,ArmyName,UnitsInArmyID,Description")] Army army)
+        public ActionResult Edit([Bind(Include = "ArmyID,ArmyName,Description")] Army army)
         {
             if (ModelState.IsValid)
             {

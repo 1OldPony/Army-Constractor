@@ -10,107 +10,107 @@ using Army_Constractor.Models;
 
 namespace Army_Constractor.Controllers
 {
-    public class BaseUnitsController : Controller
+    public class RecrutTypesController : Controller
     {
         private ArmyConstractorDB db = new ArmyConstractorDB();
 
-        // GET: BaseUnits
+        // GET: RecrutTypes
         public ActionResult Index()
         {
             return View(db.RecrutTypes.ToList());
         }
 
-        // GET: BaseUnits/Details/5
+        // GET: RecrutTypes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            RecrutType baseUnit = db.RecrutTypes.Find(id);
-            if (baseUnit == null)
+            RecrutType recrutType = db.RecrutTypes.Find(id);
+            if (recrutType == null)
             {
                 return HttpNotFound();
             }
-            return View(baseUnit);
+            return View(recrutType);
         }
 
-        // GET: BaseUnits/Create
+        // GET: RecrutTypes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: BaseUnits/Create
+        // POST: RecrutTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BaseUnitID,BaseUnitName,BaseUnitRank,BaseUnitAttBonus,BaseUnitDefBonus,BaseUnitAbsorb,BaseUnitArmorIgnore,BaseUnitMove,BaseUnitBraveryBonus,Description")] RecrutType baseUnit)
+        public ActionResult Create([Bind(Include = "RecrutTypeID,RecrutTypeName,RecrutTypeRank,RecrutTypeAttBonus,RecrutTypeDefBonus,RecrutTypeAbsorb,RecrutTypeArmorIgnore,RecrutTypeMove,RecrutTypeBraveryBonus,Description")] RecrutType recrutType)
         {
             if (ModelState.IsValid)
             {
-                db.RecrutTypes.Add(baseUnit);
+                db.RecrutTypes.Add(recrutType);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(baseUnit);
+            return View(recrutType);
         }
 
-        // GET: BaseUnits/Edit/5
+        // GET: RecrutTypes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            RecrutType baseUnit = db.RecrutTypes.Find(id);
-            if (baseUnit == null)
+            RecrutType recrutType = db.RecrutTypes.Find(id);
+            if (recrutType == null)
             {
                 return HttpNotFound();
             }
-            return View(baseUnit);
+            return View(recrutType);
         }
 
-        // POST: BaseUnits/Edit/5
+        // POST: RecrutTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BaseUnitID,BaseUnitName,BaseUnitRank,BaseUnitAttBonus,BaseUnitDefBonus,BaseUnitAbsorb,BaseUnitArmorIgnore,BaseUnitMove,BaseUnitBraveryBonus,Description")] RecrutType baseUnit)
+        public ActionResult Edit([Bind(Include = "RecrutTypeID,RecrutTypeName,RecrutTypeRank,RecrutTypeAttBonus,RecrutTypeDefBonus,RecrutTypeAbsorb,RecrutTypeArmorIgnore,RecrutTypeMove,RecrutTypeBraveryBonus,Description")] RecrutType recrutType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(baseUnit).State = EntityState.Modified;
+                db.Entry(recrutType).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(baseUnit);
+            return View(recrutType);
         }
 
-        // GET: BaseUnits/Delete/5
+        // GET: RecrutTypes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            RecrutType baseUnit = db.RecrutTypes.Find(id);
-            if (baseUnit == null)
+            RecrutType recrutType = db.RecrutTypes.Find(id);
+            if (recrutType == null)
             {
                 return HttpNotFound();
             }
-            return View(baseUnit);
+            return View(recrutType);
         }
 
-        // POST: BaseUnits/Delete/5
+        // POST: RecrutTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            RecrutType baseUnit = db.RecrutTypes.Find(id);
-            db.RecrutTypes.Remove(baseUnit);
+            RecrutType recrutType = db.RecrutTypes.Find(id);
+            db.RecrutTypes.Remove(recrutType);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

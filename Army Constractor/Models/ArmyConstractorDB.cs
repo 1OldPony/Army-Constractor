@@ -19,14 +19,15 @@ namespace Army_Constractor.Models
         {
         }
 
-        public System.Data.Entity.DbSet<Army_Constractor.Models.Army> Armies { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.Armor> Armors { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.RecrutType> RecrutTypes { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.MeleeWeapon> MeleeWeapons { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.Mount> Mounts { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.RangeWeapon> RangeWeapons { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.Shield> Shields { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.Unit> Units { get; set; }
-        public System.Data.Entity.DbSet<Army_Constractor.Models.UnitsInArmy> UnitsInArmies { get; set; }
+        public DbSet<Armor> Armors { get; set; }
+        public DbSet<Army> Armies { get; set; }
+        public DbSet<MeleeWeapon> MeleeWeapons { get; set; }
+        public DbSet<Mount> Mounts { get; set; }
+        public DbSet<RangeWeapon> RangeWeapons { get; set; }
+        public DbSet<RecrutType> RecrutTypes { get; set; }
+        public DbSet<Shield> Shields { get; set; }
+        public DbSet<Unit> Units { get; set; }
+        public DbSet<UnitsInArmy> UnitsInArmies { get; set; }
+
     }
 }
