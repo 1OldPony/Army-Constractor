@@ -27,8 +27,8 @@ namespace Army_Constractor.Models
         [Display(Name = "Оружие дал. боя")]
         public int? RangeWeaponID { get; set; }
 
-        //[Display(Name = "Вспомогательное оружие")]
-        //public int? SecondWeaponID { get; set; }
+        [Display(Name = "Вспомогательное оружие")]
+        public int? SecondWeaponID { get; set; }
 
         [Display(Name = "Щит")]
         public int? ShieldID { get; set; }
@@ -42,6 +42,7 @@ namespace Army_Constractor.Models
         public int NumberOfCombatants { get; set; }
 
         [Display(Name = "описание")]
+        [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
 
         public virtual Armor Armor { get; set; }

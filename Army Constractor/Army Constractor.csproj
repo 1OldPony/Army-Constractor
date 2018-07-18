@@ -177,6 +177,18 @@
     <Compile Include="Migrations\201807151743593_DisplayNames.Designer.cs">
       <DependentUpon>201807151743593_DisplayNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807151819317_Probe.cs" />
+    <Compile Include="Migrations\201807151819317_Probe.Designer.cs">
+      <DependentUpon>201807151819317_Probe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151823539_BringItBack.cs" />
+    <Compile Include="Migrations\201807151823539_BringItBack.Designer.cs">
+      <DependentUpon>201807151823539_BringItBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807171420334_DescAttr.cs" />
+    <Compile Include="Migrations\201807171420334_DescAttr.Designer.cs">
+      <DependentUpon>201807171420334_DescAttr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\Army.cs" />
@@ -216,6 +228,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\pricecalculators.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -293,6 +306,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807151743593_DisplayNames.resx">
       <DependentUpon>201807151743593_DisplayNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151819317_Probe.resx">
+      <DependentUpon>201807151819317_Probe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151823539_BringItBack.resx">
+      <DependentUpon>201807151823539_BringItBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807171420334_DescAttr.resx">
+      <DependentUpon>201807171420334_DescAttr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

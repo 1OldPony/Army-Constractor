@@ -4,39 +4,30 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Описание щита</h2>
 
-<div>
-    <h4>Shield</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ShieldName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShieldName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ShieldDefBonus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShieldDefBonus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ShieldID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <table class="detailtables" border="1">
+        <tr>
+            <td colspan="2" style="font-size:x-large">@Html.DisplayFor(model => model.ShieldName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ShieldDefBonus)</td>
+            <td>@Html.DisplayFor(model => model.ShieldDefBonus)</td>
+        </tr>
+        <tr>
+            <td>Стоимость:</td>
+            <td>
+                <script type="text/javascript">
+                    document.write(@Html.DisplayFor(model => model.ShieldDefBonus)* 5);
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.ActionLink("Редактировать", "Edit", new { id = Model.ShieldID }) |
+                @Html.ActionLink("Назад", "Index") |
+                @Html.ActionLink("Удалить", "Delete", new { id = Model.ShieldID })
+            </td>
+        </tr>
+    </table>
+        @Html.DisplayFor(model => model.Description)

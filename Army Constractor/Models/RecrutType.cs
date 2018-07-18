@@ -40,6 +40,7 @@ namespace Army_Constractor.Models
         public int? RecrutTypeBraveryBonus { get; set; }
 
         [Display(Name = "Описание")]
+        [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
     }
 }

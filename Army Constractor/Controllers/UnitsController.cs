@@ -42,7 +42,7 @@ namespace Army_Constractor.Controllers
             ViewBag.ArmorID = new SelectList(db.Armors, "ArmorID", "ArmorName");
             ViewBag.MountID = new SelectList(db.Mounts, "MountID", "MountName");
             ViewBag.MeleeWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName");
-            //ViewBag.SecondWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName");
+            ViewBag.SecondWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName");
             ViewBag.RangeWeaponID = new SelectList(db.RangeWeapons, "RangeWeaponID", "RanWeapName");
             ViewBag.RecrutTypeID = new SelectList(db.RecrutTypes, "RecrutTypeID", "RecrutTypeName");
             ViewBag.ShieldID = new SelectList(db.Shields, "ShieldID", "ShieldName");
@@ -66,7 +66,7 @@ namespace Army_Constractor.Controllers
             ViewBag.ArmorID = new SelectList(db.Armors, "ArmorID", "ArmorName", unit.ArmorID);
             ViewBag.MountID = new SelectList(db.Mounts, "MountID", "MountName", unit.MountID);
             ViewBag.MeleeWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.MeleeWeaponID);
-            //ViewBag.SecondWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.SecondWeaponID);
+            ViewBag.SecondWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.SecondWeaponID);
             ViewBag.RangeWeaponID = new SelectList(db.RangeWeapons, "RangeWeaponID", "RanWeapName", unit.RangeWeaponID);
             ViewBag.RecrutTypeID = new SelectList(db.RecrutTypes, "RecrutTypeID", "RecrutTypeName", unit.RecrutTypeID);
             ViewBag.ShieldID = new SelectList(db.Shields, "ShieldID", "ShieldName", unit.ShieldID);
@@ -88,7 +88,7 @@ namespace Army_Constractor.Controllers
             ViewBag.ArmorID = new SelectList(db.Armors, "ArmorID", "ArmorName", unit.ArmorID);
             ViewBag.MountID = new SelectList(db.Mounts, "MountID", "MountName", unit.MountID);
             ViewBag.MeleeWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.MeleeWeaponID);
-            //ViewBag.SecondWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.SecondWeaponID);
+            ViewBag.SecondWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.SecondWeaponID);
             ViewBag.RangeWeaponID = new SelectList(db.RangeWeapons, "RangeWeaponID", "RanWeapName", unit.RangeWeaponID);
             ViewBag.RecrutTypeID = new SelectList(db.RecrutTypes, "RecrutTypeID", "RecrutTypeName", unit.RecrutTypeID);
             ViewBag.ShieldID = new SelectList(db.Shields, "ShieldID", "ShieldName", unit.ShieldID);
@@ -111,7 +111,7 @@ namespace Army_Constractor.Controllers
             ViewBag.ArmorID = new SelectList(db.Armors, "ArmorID", "ArmorName", unit.ArmorID);
             ViewBag.MountID = new SelectList(db.Mounts, "MountID", "MountName", unit.MountID);
             ViewBag.MeleeWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.MeleeWeaponID);
-            //ViewBag.SecondWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.SecondWeaponID);
+            ViewBag.SecondWeaponID = new SelectList(db.MeleeWeapons, "MeleeWeaponID", "MelWeapName", unit.SecondWeaponID);
             ViewBag.RangeWeaponID = new SelectList(db.RangeWeapons, "RangeWeaponID", "RanWeapName", unit.RangeWeaponID);
             ViewBag.RecrutTypeID = new SelectList(db.RecrutTypes, "RecrutTypeID", "RecrutTypeName", unit.RecrutTypeID);
             ViewBag.ShieldID = new SelectList(db.Shields, "ShieldID", "ShieldName", unit.ShieldID);

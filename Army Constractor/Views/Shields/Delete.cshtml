@@ -4,45 +4,36 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Удалить щит</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Вы уверены?</h3>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Удалить" class="btn btn-default" /> |
+        @Html.ActionLink("Назад", "Index")
+    </div>
+}
 <div>
-    <h4>Shield</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ShieldName)
-        </dt>
+    <table class="detailtables" border="1">
+        <tr>
+            <td colspan="2" style="font-size:x-large">@Html.DisplayFor(model => model.ShieldName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ShieldDefBonus)</td>
+            <td>@Html.DisplayFor(model => model.ShieldDefBonus)</td>
+        </tr>
+        <tr>
+            <td>Стоимость:</td>
+            <td>
+                <script type="text/javascript">
+                    document.write(@Html.DisplayFor(model => model.ShieldDefBonus)* 5);
+                </script>
+            </td>
+        </tr>
+    </table>
+    @Html.DisplayFor(model => model.Description)
 
-        <dd>
-            @Html.DisplayFor(model => model.ShieldName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ShieldDefBonus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShieldDefBonus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>

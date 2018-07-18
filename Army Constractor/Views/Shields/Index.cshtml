@@ -4,42 +4,39 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Щиты</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Создать новый", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ShieldName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShieldDefBonus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShieldName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShieldDefBonus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ShieldID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ShieldID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ShieldID })
-        </td>
-    </tr>
-}
-
+@foreach (var item in Model)
+{
+        <table class="tableElement" border="1">
+            <tr>
+                <td colspan="2" style="font-size:x-large">@Html.DisplayFor(modelItem => item.ShieldName)</td>
+            </tr>
+            <tr>
+                <td>Защ</td>
+                <td rowspan="3" style="font-size:xx-large">
+                <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelItem => item.ShieldDefBonus)* 5);
+                    </script></td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShieldDefBonus)
+                </td>
+            </tr>
+            <tr>
+                <td align="right" style="font-size:large">Стоимость:</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.ActionLink("Редактировать", "Edit", new { id = item.ShieldID }) |
+                    @Html.ActionLink("Подробнее", "Details", new { id = item.ShieldID }) |
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.ShieldID })
+                </td>
+            </tr>
 </table>
+}
