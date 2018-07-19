@@ -8,7 +8,6 @@
         $('#ShieldDefBonus').val(shieldDef);
         $('#ShieldPrice').val(shieldDef * 5)
     }
-        
 }
 function shieldPriceCalcMinus () {
     var shieldDef = $('#ShieldDefBonus').val();

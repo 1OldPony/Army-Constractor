@@ -4,78 +4,76 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Рекруты</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Создать нового", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutTypeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutTypeRank)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutTypeAttBonus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutTypeDefBonus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutTypeAbsorb)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutTypeArmorIgnore)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutTypeMove)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutTypeBraveryBonus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecrutTypeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecrutTypeRank)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecrutTypeAttBonus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecrutTypeDefBonus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecrutTypeAbsorb)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecrutTypeMove)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecrutTypeBraveryBonus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RecrutTypeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RecrutTypeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RecrutTypeID })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <table class="tableElement" border="1">
+        <tr>
+            <td colspan="7" style="font-size:x-large">@Html.DisplayFor(modelItem => item.RecrutTypeName)</td>
+        </tr>
+        <tr>
+            <td>Пгл</td><td>Брб</td><td>Атк</td><td>Защ</td><td>Хрб</td><td>Двж</td>
+            <td rowspan="8" style="font-size:xx-large">
+                <script type="text/javascript">
+                    var charPrices = [[@Html.DisplayFor(modelItem => item.RecrutTypeAbsorb),5],
+                        [@Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore),5],
+                        [@Html.DisplayFor(modelItem => item.RecrutTypeAttBonus),5],
+                        [@Html.DisplayFor(modelItem => item.RecrutTypeBraveryBonus),5],
+                        [@Html.DisplayFor(modelItem => item.RecrutTypeDefBonus),5],
+                        [@Html.DisplayFor(modelItem => item.RecrutTypeMove),2],
+                        [@Html.DisplayFor(modelItem => item.RecrutTypeRank),10]];
+                    var totalPrice = 0;
+                    for (var i = 0; i < charPrices.length; i++) {
+                        if (!isNaN(charPrices[i][0])) {
+                            totalPrice += charPrices[i][1] * charPrices[i][0]};
+                    };
+                    document.write(totalPrice);
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td class="tableCaracteristic">
+                @Html.DisplayFor(modelItem => item.RecrutTypeAbsorb)
+            </td>
+            <td class="tableCaracteristic">
+                @Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore)
+            </td>
+            <td class="tableCaracteristic">
+                <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelItem => item.RecrutTypeAttBonus)
+                        + @Html.DisplayFor(modelItem => item.RecrutTypeRank));
+                </script>
+            </td>
+            <td class="tableCaracteristic">
+                <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelItem => item.RecrutTypeDefBonus)
+                        + @Html.DisplayFor(modelItem => item.RecrutTypeRank));
+                </script>
+            </td>
+            <td class="tableCaracteristic">
+                <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelItem => item.RecrutTypeBraveryBonus)
+                        + @Html.DisplayFor(modelItem => item.RecrutTypeRank));
+                </script>
+            </td>
+            <td class="tableCaracteristic">
+                @Html.DisplayFor(modelItem => item.RecrutTypeMove)
+            </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="6" style="font-size:large">Стоимость:</td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.RecrutTypeID }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.RecrutTypeID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.RecrutTypeID })
+            </td>
+        </tr>
+    </table>
 }
-
-</table>

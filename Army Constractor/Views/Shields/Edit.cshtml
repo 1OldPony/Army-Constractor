@@ -1,4 +1,5 @@
-﻿@model Army_Constractor.Models.Shield
+﻿
+@model Army_Constractor.Models.Shield
 
 @{
                 /**/
@@ -32,15 +33,15 @@
                 <td class="firstColumn">@Html.LabelFor(model => model.ShieldDefBonus, htmlAttributes: new { @class = "control-label col-md-2" })</td>
                 <td><input type="button" class="arrowButton" value="-" onclick="shieldPriceCalcMinus()"></td>
                 <td>
-                    <input type="number" name="ShieldDefBonus" id="ShieldDefBonus" value="@Html.DisplayFor(model => model.ShieldDefBonus)" class="inputsSmall">
+                    @Html.EditorFor(model => model.ShieldDefBonus, new { htmlAttributes = new { @class = "inputsSmall" } })
                     @Html.ValidationMessageFor(model => model.ShieldDefBonus, "", new { @class = "text-danger" })
                 </td>
                 <td><input type="button" class="arrowButton" value="+" onclick="shieldPriceCalcPlus()"></td>
             </tr>
             <tr>
                 <td class="firstColumn">Стоимость</td>
-                <td colspan="3">
-                    <input type="number" id="ShieldPrice" readonly class="inputsMedium" onload="shieldPriceCalc()">
+                <td colspan="3" onload="shieldPriceCalc()">
+                    <input type="number" id="ShieldPrice" readonly class="inputsMedium">
                 </td>
             </tr>
             <tr>
