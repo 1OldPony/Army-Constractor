@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201807191336202_AnotherWay.Designer.cs">
       <DependentUpon>201807191336202_AnotherWay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807211816465_RangAtt.cs" />
+    <Compile Include="Migrations\201807211816465_RangAtt.Designer.cs">
+      <DependentUpon>201807211816465_RangAtt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\Army.cs" />
@@ -240,7 +244,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\recrutTypePriceOnLoad.js" />
     <Content Include="Scripts\shieldpricecalcOnLoad.js" />
-    <Content Include="Scripts\shieldpricecalculator.js" />
+    <Content Include="Scripts\shieldpricecalculator2.js" />
     <Content Include="Scripts\recruttypepricecalculator.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -273,11 +277,6 @@
     <Content Include="Views\Mounts\Details.cshtml" />
     <Content Include="Views\Mounts\Edit.cshtml" />
     <Content Include="Views\Mounts\Index.cshtml" />
-    <Content Include="Views\RangeWeapons\Create.cshtml" />
-    <Content Include="Views\RangeWeapons\Delete.cshtml" />
-    <Content Include="Views\RangeWeapons\Details.cshtml" />
-    <Content Include="Views\RangeWeapons\Edit.cshtml" />
-    <Content Include="Views\RangeWeapons\Index.cshtml" />
     <Content Include="Views\RecrutTypes\Create.cshtml" />
     <Content Include="Views\RecrutTypes\Delete.cshtml" />
     <Content Include="Views\RecrutTypes\Details.cshtml" />
@@ -293,6 +292,11 @@
     <Content Include="Views\Units\Details.cshtml" />
     <Content Include="Views\Units\Edit.cshtml" />
     <Content Include="Views\Units\Index.cshtml" />
+    <Content Include="Views\RangeWeapons\Create.cshtml" />
+    <Content Include="Views\RangeWeapons\Delete.cshtml" />
+    <Content Include="Views\RangeWeapons\Details.cshtml" />
+    <Content Include="Views\RangeWeapons\Edit.cshtml" />
+    <Content Include="Views\RangeWeapons\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807191336202_AnotherWay.resx">
       <DependentUpon>201807191336202_AnotherWay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807211816465_RangAtt.resx">
+      <DependentUpon>201807211816465_RangAtt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -27,9 +27,10 @@ namespace Army_Constractor
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-            bundles.Add(new ScriptBundle("~/bundles/shieldpricecalculator")
-                .Include("~/Scripts/shieldpricecalculator.js")
+            bundles.Add(new ScriptBundle("~/bundles/shieldpricecalculator2")
                 .Include("~/Scripts/shieldpricecalcOnLoad.js"));
+            bundles.Add(new ScriptBundle("~/bundles/shieldpricecalculator")
+                .Include("~/Scripts/shieldpricecalculator2.js"));
             bundles.Add(new ScriptBundle("~/bundles/recruttypepricecalculator")
                 .Include("~/Scripts/recruttypepricecalculator.js")
                 .Include("~/Scripts/recrutTypePriceOnLoad.js"));

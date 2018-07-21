@@ -1,7 +1,7 @@
 ﻿function shieldPriceCalcPlus() {
     var shieldDef = $('#ShieldDefBonus').val();
 
-    if (shieldDef === 5)
+    if (shieldDef == 5)
         alert("Это максимальное значение характеристики")
     else {
         shieldDef++;
@@ -12,7 +12,7 @@
 function shieldPriceCalcMinus() {
     var shieldDef = $('#ShieldDefBonus').val();
     
-    if (shieldDef === 1)
+    if (shieldDef == 1)
         alert("Это минимальное значение характеристики")
     else {
         shieldDef--;

@@ -14,7 +14,7 @@
 {
     <table class="tableElement" border="1">
         <tr>
-            <td colspan="7" style="font-size:x-large">@Html.DisplayFor(modelItem => item.RecrutTypeName)</td>
+            <td colspan="7" style="font-size:x-large">@item.RecrutTypeName</td>
         </tr>
         <tr>
             <td>Пгл</td>
@@ -25,13 +25,13 @@
             <td>Двж</td>
             <td rowspan="8" style="font-size:xx-large" id="price" onload="recrutTypePriceCalc()">
                 <script type="text/javascript">
-                        var charPrices = [[@Html.DisplayFor(modelItem => item.RecrutTypeAbsorb),5],
-                            [@Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore),5],
-                            [@Html.DisplayFor(modelItem => item.RecrutTypeAttBonus),5],
-                            [@Html.DisplayFor(modelItem => item.RecrutTypeBraveryBonus),5],
-                            [@Html.DisplayFor(modelItem => item.RecrutTypeDefBonus),5],
-                            [@Html.DisplayFor(modelItem => item.RecrutTypeMove),2],
-                            [@Html.DisplayFor(modelItem => item.RecrutTypeRank),10]];
+                        var charPrices = [[@item.RecrutTypeAbsorb,5],
+                            [@item.RecrutTypeArmorIgnore,5],
+                            [@item.RecrutTypeAttBonus,5],
+                            [@item.RecrutTypeBraveryBonus,5],
+                            [@item.RecrutTypeDefBonus,5],
+                            [@item.RecrutTypeMove,2],
+                            [@item.RecrutTypeRank,10]];
                         var totalPrice = 0;
                         for (var i = 0; i < charPrices.length; i++) {
                             if (!isNaN(charPrices[i][0])) {
@@ -42,31 +42,31 @@
         </tr>
         <tr>
             <td class="tableCaracteristic">
-                @Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore)
+                @item.RecrutTypeArmorIgnore
             </td>
             <td class="tableCaracteristic">
-                @Html.DisplayFor(modelItem => item.RecrutTypeAbsorb)
+                @item.RecrutTypeAbsorb
             </td>
             <td class="tableCaracteristic">
                 <script type="text/javascript">
-                    document.write(@Html.DisplayFor(modelItem => item.RecrutTypeAttBonus)
-                        + @Html.DisplayFor(modelItem => item.RecrutTypeRank));
+                    document.write(@item.RecrutTypeAttBonus
+                        + @item.RecrutTypeRank);
                 </script>
             </td>
             <td class="tableCaracteristic">
                 <script type="text/javascript">
-                    document.write(@Html.DisplayFor(modelItem => item.RecrutTypeDefBonus)
-                        + @Html.DisplayFor(modelItem => item.RecrutTypeRank));
+                    document.write(@item.RecrutTypeDefBonus
+                        + @item.RecrutTypeRank);
                 </script>
             </td>
             <td class="tableCaracteristic">
                 <script type="text/javascript">
-                    document.write(@Html.DisplayFor(modelItem => item.RecrutTypeBraveryBonus)
-                        + @Html.DisplayFor(modelItem => item.RecrutTypeRank));
+                    document.write(@item.RecrutTypeBraveryBonus
+                        + @item.RecrutTypeRank);
                 </script>
             </td>
             <td class="tableCaracteristic">
-                @Html.DisplayFor(modelItem => item.RecrutTypeMove)
+                @item.RecrutTypeMove
             </td>
         </tr>
         <tr>

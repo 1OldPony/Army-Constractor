@@ -14,6 +14,10 @@ namespace Army_Constractor.Models
         [Display(Name = "Оружие дал. боя")]
         public string RanWeapName { get; set; }
 
+        [Display(Name = "Стрелковый бонус атаки")]
+        [Range(1, 5)]
+        public int RanWeapAttBonus { get; set; }
+
         [Required(ErrorMessage = "Эта характеристика необходима")]
         [Range(5, 30)]
         [Display(Name = "Радиус атаки")]

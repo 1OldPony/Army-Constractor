@@ -46,7 +46,7 @@ namespace Army_Constractor.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RangeWeaponID,RanWeapName,RanWeapRange,RanWeapArmorIgnore,Description")] RangeWeapon rangeWeapon)
+        public ActionResult Create([Bind(Include = "RangeWeaponID,RanWeapName,RanWeapAttBonus,RanWeapRange,RanWeapArmorIgnore,Description")] RangeWeapon rangeWeapon)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Army_Constractor.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RangeWeaponID,RanWeapName,RanWeapRange,RanWeapArmorIgnore,Description")] RangeWeapon rangeWeapon)
+        public ActionResult Edit([Bind(Include = "RangeWeaponID,RanWeapName,RanWeapAttBonus,RanWeapRange,RanWeapArmorIgnore,Description")] RangeWeapon rangeWeapon)
         {
             if (ModelState.IsValid)
             {

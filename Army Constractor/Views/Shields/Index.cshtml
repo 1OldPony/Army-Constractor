@@ -18,20 +18,20 @@
 {
     <table class="tableElement" border="1">
         <tr>
-            <td colspan="2" style="font-size:x-large">@Html.DisplayFor(modelItem => item.ShieldName)</td>
+            <td colspan="2" style="font-size:x-large">@item.ShieldName</td>
         </tr>
         <tr>
             <td>Защ</td>
             <td rowspan="3" style="font-size:xx-large">
                 @*@Html.DisplayFor(model => model.Price)*@
                 <script type="text/javascript">
-                    document.write(@Html.DisplayFor(modelItem => item.ShieldDefBonus)* 5);
+                    document.write(@item.ShieldDefBonus* 5);
                 </script>
             </td>
         </tr>
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ShieldDefBonus)
+                @item.ShieldDefBonus
             </td>
         </tr>
         <tr>
