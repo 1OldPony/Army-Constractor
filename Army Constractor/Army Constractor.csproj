@@ -201,6 +201,10 @@
     <Compile Include="Migrations\201807211816465_RangAtt.Designer.cs">
       <DependentUpon>201807211816465_RangAtt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807211932505_PricesBack!.cs" />
+    <Compile Include="Migrations\201807211932505_PricesBack!.Designer.cs">
+      <DependentUpon>201807211932505_PricesBack!.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\Army.cs" />
@@ -341,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807211816465_RangAtt.resx">
       <DependentUpon>201807211816465_RangAtt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807211932505_PricesBack!.resx">
+      <DependentUpon>201807211932505_PricesBack!.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

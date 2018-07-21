@@ -27,5 +27,8 @@ namespace Army_Constractor.Models
         [Display(Name = "Описание")]
         [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
+
+        [Display(Name = "Цена")]
+        public int ArmorPrice { get; set; }
     }
 }

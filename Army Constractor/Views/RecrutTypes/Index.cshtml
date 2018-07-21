@@ -23,21 +23,8 @@
             <td>Защ</td>
             <td>Хрб</td>
             <td>Двж</td>
-            <td rowspan="8" style="font-size:xx-large" id="price" onload="recrutTypePriceCalc()">
-                <script type="text/javascript">
-                        var charPrices = [[@item.RecrutTypeAbsorb,5],
-                            [@item.RecrutTypeArmorIgnore,5],
-                            [@item.RecrutTypeAttBonus,5],
-                            [@item.RecrutTypeBraveryBonus,5],
-                            [@item.RecrutTypeDefBonus,5],
-                            [@item.RecrutTypeMove,2],
-                            [@item.RecrutTypeRank,10]];
-                        var totalPrice = 0;
-                        for (var i = 0; i < charPrices.length; i++) {
-                            if (!isNaN(charPrices[i][0])) {
-                                totalPrice += charPrices[i][1] * charPrices[i][0]};};
-                        document.write(totalPrice);
-                    </script>
+            <td rowspan="8" style="font-size:xx-large">
+                @Html.DisplayFor(modelitem => item.RecrutTypePrice)
             </td>
         </tr>
         <tr>
