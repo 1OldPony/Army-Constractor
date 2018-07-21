@@ -17,10 +17,6 @@ function shieldPriceCalcMinus() {
     else {
         shieldDef--;
         $('#ShieldDefBonus').val(shieldDef);
-        //$('#ShieldPrice').val(shieldDef * 5)
+        $('#ShieldPrice').val(shieldDef * 5)
     }
-}
-window.onload = function shieldPriceCalc() {
-    var shieldDef = $('#ShieldDefBonus').val();
-    $('#ShieldPrice').val(shieldDef * 5)
 }

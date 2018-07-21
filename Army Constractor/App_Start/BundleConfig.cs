@@ -21,7 +21,6 @@ namespace Army_Constractor
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js")
-                      //.Include("~/Scripts/shieldpricecalculator.js")
                       
                       .Include("~/Scripts/recrutTypePriceOnLoad.js"));
 
@@ -29,11 +28,13 @@ namespace Army_Constractor
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             bundles.Add(new ScriptBundle("~/bundles/shieldpricecalculator")
-                .Include("~/Scripts/shieldpricecalculator.js"));
+                .Include("~/Scripts/shieldpricecalculator.js")
+                .Include("~/Scripts/shieldpricecalcOnLoad.js"));
             bundles.Add(new ScriptBundle("~/bundles/recruttypepricecalculator")
                 .Include("~/Scripts/recruttypepricecalculator.js")
                 .Include("~/Scripts/recrutTypePriceOnLoad.js"));
         }
+        
     }
 }
 
