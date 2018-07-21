@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Army_Constractor.Models.Shield>
+﻿@*@model Army_Constractor.ViewModels.ShieldsIndexModel*@
+
+@model IEnumerable<Army_Constractor.Models.Shield>
 
 @{
     ViewBag.Title = "Index";
@@ -10,6 +12,7 @@
     @Html.ActionLink("Создать новый", "Create")
 </p>
 
+@*@foreach (var item in Model.Shields)*@
 @foreach (var item in Model)
 
 {
@@ -20,12 +23,15 @@
         <tr>
             <td>Защ</td>
             <td rowspan="3" style="font-size:xx-large">
-                @Html.DisplayFor(modelitem => item.ShieldPrice)
+                @*@Html.DisplayFor(model => model.Price)*@
+                <script type="text/javascript">
+                    document.write(@item.ShieldDefBonus* 5);
+                </script>
             </td>
         </tr>
         <tr>
             <td>
-                @Html.DisplayFor(modelitem => item.ShieldDefBonus)
+                @item.ShieldDefBonus
             </td>
         </tr>
         <tr>

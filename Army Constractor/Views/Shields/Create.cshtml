@@ -34,7 +34,9 @@
             </tr>
             <tr>
                 <td class="firstColumn">Стоимость</td>
-                <input type="number" id="ShieldPrice" name="ShieldPrice" value="@Model.ShieldPrice" class="inputsMedium">
+                <td colspan="3">
+                    <input type="number" id="ShieldPrice" readonly class="inputsMedium" onload="shieldPriceCalc()">
+                </td>
             </tr>
             <tr>
                 <td colspan="4">

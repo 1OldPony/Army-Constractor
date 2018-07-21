@@ -14,10 +14,12 @@
             <td>@Html.DisplayNameFor(model => model.ShieldDefBonus)</td>
             <td>@Html.DisplayFor(model => model.ShieldDefBonus)</td>
         </tr>
-        <tr> 
+        <tr>
             <td>Стоимость:</td>
             <td>
-                @Html.DisplayFor(model => model.ShieldPrice)
+                <script type="text/javascript">
+                    document.write(@Html.DisplayFor(model => model.ShieldDefBonus)* 5);
+                </script>
             </td>
         </tr>
         <tr>
