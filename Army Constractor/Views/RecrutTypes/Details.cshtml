@@ -4,87 +4,65 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Описание рекрута</h2>
 
-<div>
-    <h4>RecrutType</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.RecrutTypeName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RecrutTypeName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RecrutTypeRank)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RecrutTypeRank)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RecrutTypeAttBonus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RecrutTypeAttBonus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RecrutTypeDefBonus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RecrutTypeDefBonus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RecrutTypeAbsorb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RecrutTypeAbsorb)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RecrutTypeArmorIgnore)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RecrutTypeArmorIgnore)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RecrutTypeMove)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RecrutTypeMove)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RecrutTypeBraveryBonus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RecrutTypeBraveryBonus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.RecrutTypeID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<table class="detailtables" border="1">
+    <tr>
+        <td colspan="2" style="font-size:x-large">@Html.DisplayFor(model => model.RecrutTypeName)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.RecrutTypeAbsorb)</td>
+        <td>@Html.DisplayFor(model => model.RecrutTypeAbsorb)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.RecrutTypeArmorIgnore)</td>
+        <td>@Html.DisplayFor(model => model.RecrutTypeArmorIgnore)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.RecrutTypeAttBonus)</td>
+        <td>@Html.DisplayFor(model => model.RecrutTypeAttBonus)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.RecrutTypeDefBonus)</td>
+        <td>@Html.DisplayFor(model => model.RecrutTypeDefBonus)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.RecrutTypeRank)</td>
+        <td>@Html.DisplayFor(model => model.RecrutTypeRank)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.RecrutTypeBraveryBonus)</td>
+        <td>@Html.DisplayFor(model => model.RecrutTypeBraveryBonus)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.RecrutTypeMove)</td>
+        <td>@Html.DisplayFor(model => model.RecrutTypeMove)</td>
+    </tr>
+    <tr>
+        <td>Стоимость:</td>
+        <td>
+            <script type="text/javascript">
+                        var charPrices = [[@Html.DisplayFor(model => model.RecrutTypeAbsorb),5],
+                            [@Html.DisplayFor(model => model.RecrutTypeArmorIgnore),5],
+                            [@Html.DisplayFor(model => model.RecrutTypeAttBonus),5],
+                            [@Html.DisplayFor(model => model.RecrutTypeBraveryBonus),5],
+                            [@Html.DisplayFor(model => model.RecrutTypeDefBonus),5],
+                            [@Html.DisplayFor(model => model.RecrutTypeMove),2],
+                            [@Html.DisplayFor(model => model.RecrutTypeRank),10]];
+                        var totalPrice = 0;
+                        for (var i = 0; i < charPrices.length; i++) {
+                            if (!isNaN(charPrices[i][0])) {
+                                totalPrice += charPrices[i][1] * charPrices[i][0]};};
+                        document.write(totalPrice);
+            </script>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            @Html.ActionLink("Редактировать", "Edit", new { id = Model.RecrutTypeID }) |
+            @Html.ActionLink("Назад", "Index") |
+            @Html.ActionLink("Удалить", "Delete", new { id = Model.RecrutTypeID })
+        </td>
+    </tr>
+</table>
+@Html.DisplayFor(model => model.Description)

@@ -20,7 +20,7 @@ namespace Army_Constractor.Models
         [Display(Name = "Поглощение урона")]
         public int ArmorAbsorb { get; set; }
 
-        [Range(1, 5)]
+        [Range(0, 5)]
         [Display(Name = "Снижение скорости")]
         public int? ArmorMoveDecrease { get; set; }
 

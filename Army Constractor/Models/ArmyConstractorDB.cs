@@ -29,17 +29,17 @@ namespace Army_Constractor.Models
         public DbSet<Unit> Units { get; set; }
         public DbSet<UnitsInArmy> UnitsInArmies { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Unit>()
-                .HasOptional(u=>u.MeleeWeapon)
-                .WithOptionalDependent()
-                .Map(c=>c.MapKey("MeleeWeaponID"));
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Unit>()
+        //        .HasOptional(u=>u.MeleeWeapon)
+        //        .WithOptionalDependent()
+        //        .Map(c=>c.MapKey("MeleeWeaponID"));
 
-            modelBuilder.Entity<Unit>()
-                .HasOptional(u => u.SecondWeapon)
-                .WithOptionalDependent()
-                .Map(c => c.MapKey("SecondWeaponID"));
-        }
+        //    modelBuilder.Entity<Unit>()
+        //        .HasOptional(u => u.SecondWeapon)
+        //        .WithOptionalDependent()
+        //        .Map(c => c.MapKey("SecondWeaponID"));
+        //}
     }
 }

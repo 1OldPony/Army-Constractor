@@ -4,101 +4,121 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Создать рекрута</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>RecrutType</h4>
+        <h4>@Html.DisplayFor(model => model.RecrutTypeName)</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RecrutTypeName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RecrutTypeName, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeRank, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RecrutTypeRank, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RecrutTypeRank, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeAttBonus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RecrutTypeAttBonus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RecrutTypeAttBonus, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeDefBonus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RecrutTypeDefBonus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RecrutTypeDefBonus, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeAbsorb, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RecrutTypeAbsorb, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RecrutTypeAbsorb, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeArmorIgnore, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RecrutTypeArmorIgnore, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RecrutTypeArmorIgnore, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeMove, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RecrutTypeMove, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RecrutTypeMove, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeBraveryBonus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RecrutTypeBraveryBonus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RecrutTypeBraveryBonus, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+        <table class="editTables" border="0">
+            <tr>
+                <td class="firstColumn">Название</td>
+                <td colspan="3" class="secondColumn">
+                    @Html.EditorFor(model => model.RecrutTypeName, new { htmlAttributes = new { @class = "inputsMedium" } })
+                    @Html.ValidationMessageFor(model => model.RecrutTypeName, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td class="firstColumn">@Html.LabelFor(model => model.RecrutTypeAbsorb, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td><input type="button" class="arrowButton" value="-" onclick="RecrutTypePriceCalcMinus(RecrutTypeAbsorb)"></td>
+                <td>
+                    @Html.EditorFor(model => model.RecrutTypeAbsorb, new { htmlAttributes = new { @class = "inputsSmall" } })
+                    @Html.ValidationMessageFor(model => model.RecrutTypeAbsorb, "", new { @class = "text-danger" })
+                </td>
+                <td><input type="button" class="arrowButton" value="+" onclick="RecrutTypePriceCalcPlus(RecrutTypeAbsorb)"></td>
+            </tr>
+            <tr>
+                <td class="firstColumn">@Html.LabelFor(model => model.RecrutTypeArmorIgnore, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td><input type="button" class="arrowButton" value="-" onclick="RecrutTypePriceCalcMinus(RecrutTypeArmorIgnore)"></td>
+                <td>
+                    @Html.EditorFor(model => model.RecrutTypeArmorIgnore, new { htmlAttributes = new { @class = "inputsSmall" } })
+                    @Html.ValidationMessageFor(model => model.RecrutTypeArmorIgnore, "", new { @class = "text-danger" })
+                </td>
+                <td><input type="button" class="arrowButton" value="+" onclick="RecrutTypePriceCalcPlus(RecrutTypeArmorIgnore)"></td>
+            </tr>
+            <tr>
+                <td class="firstColumn">@Html.LabelFor(model => model.RecrutTypeAttBonus, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td><input type="button" class="arrowButton" value="-" onclick="RecrutTypePriceCalcMinus(RecrutTypeAttBonus)"></td>
+                <td>
+                    @Html.EditorFor(model => model.RecrutTypeAttBonus, new { htmlAttributes = new { @class = "inputsSmall" } })
+                    @Html.ValidationMessageFor(model => model.RecrutTypeAttBonus, "", new { @class = "text-danger" })
+                </td>
+                <td><input type="button" class="arrowButton" value="+" onclick="RecrutTypePriceCalcPlus(RecrutTypeAttBonus)"></td>
+            </tr>
+            <tr>
+                <td class="firstColumn">@Html.LabelFor(model => model.RecrutTypeDefBonus, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td><input type="button" class="arrowButton" value="-" onclick="RecrutTypePriceCalcMinus(RecrutTypeDefBonus)"></td>
+                <td>
+                    @Html.EditorFor(model => model.RecrutTypeDefBonus, new { htmlAttributes = new { @class = "inputsSmall" } })
+                    @Html.ValidationMessageFor(model => model.RecrutTypeDefBonus, "", new { @class = "text-danger" })
+                </td>
+                <td><input type="button" class="arrowButton" value="+" onclick="RecrutTypePriceCalcPlus(RecrutTypeDefBonus)"></td>
+            </tr>
+            <tr>
+                <td class="firstColumn">@Html.LabelFor(model => model.RecrutTypeRank, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td><input type="button" class="arrowButton" value="-" onclick="RecrutTypePriceCalcMinus(RecrutTypeRank)"></td>
+                <td>
+                    @Html.EditorFor(model => model.RecrutTypeRank, new { htmlAttributes = new { @class = "inputsSmall" } })
+                    @Html.ValidationMessageFor(model => model.RecrutTypeRank, "", new { @class = "text-danger" })
+                </td>
+                <td><input type="button" class="arrowButton" value="+" onclick="RecrutTypePriceCalcPlus(RecrutTypeRank)"></td>
+            </tr>
+            <tr>
+                <td class="firstColumn">@Html.LabelFor(model => model.RecrutTypeBraveryBonus, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td><input type="button" class="arrowButton" value="-" onclick="RecrutTypePriceCalcMinus(RecrutTypeBraveryBonus)"></td>
+                <td>
+                    @Html.EditorFor(model => model.RecrutTypeBraveryBonus, new { htmlAttributes = new { @class = "inputsSmall" } })
+                    @Html.ValidationMessageFor(model => model.RecrutTypeBraveryBonus, "", new { @class = "text-danger" })
+                </td>
+                <td><input type="button" class="arrowButton" value="+" onclick="RecrutTypePriceCalcPlus(RecrutTypeBraveryBonus)"></td>
+            </tr>
+            <tr>
+                <td class="firstColumn">@Html.LabelFor(model => model.RecrutTypeMove, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td><input type="button" class="arrowButton" value="-" onclick="RecrutTypePriceCalcMinus(RecrutTypeMove)"></td>
+                <td>
+                    @Html.EditorFor(model => model.RecrutTypeMove, new { htmlAttributes = new { @class = "inputsSmall" } })
+                    @Html.ValidationMessageFor(model => model.RecrutTypeMove, "", new { @class = "text-danger" })
+                </td>
+                <td><input type="button" class="arrowButton" value="+" onclick="RecrutTypePriceCalcPlus(RecrutTypeMove)"></td>
+            </tr>
+            <tr>
+                <td class="firstColumn">Стоимость</td>
+                <td colspan="3">
+                    <input type="number" id="RecrutTypePrice" readonly class="inputsMedium">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    @Html.TextArea("Description", null, htmlAttributes: new { @class = "textArea" })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="firstColumn">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Создать" class="btn btn-default" />
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2">
+                    @Html.ActionLink("Назад", "Index")
+                </td>
+            </tr>
+        </table>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/recruttypepricecalculator")
 }

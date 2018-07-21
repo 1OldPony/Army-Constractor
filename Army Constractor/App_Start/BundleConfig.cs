@@ -20,11 +20,20 @@ namespace Army_Constractor
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js").Include("~/Scripts/pricecalculators.js"));
+                      "~/Scripts/bootstrap.js")
+                      //.Include("~/Scripts/shieldpricecalculator.js")
+                      
+                      .Include("~/Scripts/recrutTypePriceOnLoad.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/shieldpricecalculator")
+                .Include("~/Scripts/shieldpricecalculator.js"));
+            bundles.Add(new ScriptBundle("~/bundles/recruttypepricecalculator")
+                .Include("~/Scripts/recruttypepricecalculator.js")
+                .Include("~/Scripts/recrutTypePriceOnLoad.js"));
         }
     }
 }
+

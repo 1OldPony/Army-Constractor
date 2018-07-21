@@ -33,14 +33,13 @@
     border: 1px;
     font-size: 14px;
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
-    border:1px;
 }
 .detailtables {
     text-align: center;
     float: left;
-    width: 30%;
+    width: 50%;
     min-width: 300px;
-    max-width: 600px;
+    max-width: 800px;
     border: 1px;
     font-size: 14px;
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
@@ -48,15 +47,15 @@
 .editTables {
     text-align: center;
     float: left;
-    width: 300px;
+    width: 350px;
     border: 1px;
     font-size: 14px;
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .textArea {
     width: 30%;
-    min-width: 300px;
-    max-width: 600px;
+    min-width: 350px;
+    max-width: 700px;
     height: 250px;
     font-size:14px;
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
@@ -69,16 +68,16 @@
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .inputsSmall {
-    width: 4%;
-    min-width: 40px;
-    max-width: 80px;
+    width: 7%;
+    min-width: 70px;
+    max-width: 140px;
     font-size: 14px;
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .inputsMedium {
-    width: 10%;
-    min-width: 100px;
-    max-width: 200px;
+    width: 15%;
+    min-width: 150px;
+    max-width: 300px;
     font-size: 14px;
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
@@ -89,12 +88,12 @@
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .secondColumn {
-    width: 100px;
+    width: 150px;
     font-size: 14px;
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .arrowButton {
-    width: 3%;
-    min-width: 30px;
-    max-width: 60px;
+    width: 4%;
+    min-width: 40px;
+    max-width: 80px;
 }

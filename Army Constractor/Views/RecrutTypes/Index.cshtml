@@ -17,31 +17,35 @@
             <td colspan="7" style="font-size:x-large">@Html.DisplayFor(modelItem => item.RecrutTypeName)</td>
         </tr>
         <tr>
-            <td>Пгл</td><td>Брб</td><td>Атк</td><td>Защ</td><td>Хрб</td><td>Двж</td>
-            <td rowspan="8" style="font-size:xx-large">
+            <td>Пгл</td>
+            <td>Брб</td>
+            <td>Атк</td>
+            <td>Защ</td>
+            <td>Хрб</td>
+            <td>Двж</td>
+            <td rowspan="8" style="font-size:xx-large" id="price" onload="recrutTypePriceCalc()">
                 <script type="text/javascript">
-                    var charPrices = [[@Html.DisplayFor(modelItem => item.RecrutTypeAbsorb),5],
-                        [@Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore),5],
-                        [@Html.DisplayFor(modelItem => item.RecrutTypeAttBonus),5],
-                        [@Html.DisplayFor(modelItem => item.RecrutTypeBraveryBonus),5],
-                        [@Html.DisplayFor(modelItem => item.RecrutTypeDefBonus),5],
-                        [@Html.DisplayFor(modelItem => item.RecrutTypeMove),2],
-                        [@Html.DisplayFor(modelItem => item.RecrutTypeRank),10]];
-                    var totalPrice = 0;
-                    for (var i = 0; i < charPrices.length; i++) {
-                        if (!isNaN(charPrices[i][0])) {
-                            totalPrice += charPrices[i][1] * charPrices[i][0]};
-                    };
-                    document.write(totalPrice);
-                </script>
+                        var charPrices = [[@Html.DisplayFor(modelItem => item.RecrutTypeAbsorb),5],
+                            [@Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore),5],
+                            [@Html.DisplayFor(modelItem => item.RecrutTypeAttBonus),5],
+                            [@Html.DisplayFor(modelItem => item.RecrutTypeBraveryBonus),5],
+                            [@Html.DisplayFor(modelItem => item.RecrutTypeDefBonus),5],
+                            [@Html.DisplayFor(modelItem => item.RecrutTypeMove),2],
+                            [@Html.DisplayFor(modelItem => item.RecrutTypeRank),10]];
+                        var totalPrice = 0;
+                        for (var i = 0; i < charPrices.length; i++) {
+                            if (!isNaN(charPrices[i][0])) {
+                                totalPrice += charPrices[i][1] * charPrices[i][0]};};
+                        document.write(totalPrice);
+                    </script>
             </td>
         </tr>
         <tr>
             <td class="tableCaracteristic">
-                @Html.DisplayFor(modelItem => item.RecrutTypeAbsorb)
+                @Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore)
             </td>
             <td class="tableCaracteristic">
-                @Html.DisplayFor(modelItem => item.RecrutTypeArmorIgnore)
+                @Html.DisplayFor(modelItem => item.RecrutTypeAbsorb)
             </td>
             <td class="tableCaracteristic">
                 <script type="text/javascript">

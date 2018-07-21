@@ -25,9 +25,11 @@ namespace Army_Constractor.Models
         public int MountRank { get; set; }
 
         [Display(Name = "Бронебойность")]
+        [Range(0, 5)]
         public int? MountArmorIgnore { get; set; }
 
         [Display(Name = "Поглощение урона")]
+        [Range(0, 5)]
         public int? MountAbsorb { get; set; }
 
         [Required(ErrorMessage = "Эта характеристика необходима")]

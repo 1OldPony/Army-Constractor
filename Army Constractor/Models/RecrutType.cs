@@ -20,15 +20,19 @@ namespace Army_Constractor.Models
         public int RecrutTypeRank { get; set; }
 
         [Display(Name = "Бонус атаки")]
+        [Range(0, 10)]
         public int? RecrutTypeAttBonus { get; set; }
 
         [Display(Name = "Бонус защиты")]
+        [Range(0, 10)]
         public int? RecrutTypeDefBonus { get; set; }
 
         [Display(Name = "Поглощение урона")]
+        [Range(0, 5)]
         public int? RecrutTypeAbsorb { get; set; }
 
         [Display(Name = "Бронебойность")]
+        [Range(0, 5)]
         public int? RecrutTypeArmorIgnore { get; set; }
 
         [Required(ErrorMessage = "Эта характеристика необходима")]
@@ -37,6 +41,7 @@ namespace Army_Constractor.Models
         public int RecrutTypeMove { get; set; }
 
         [Display(Name = "Бонус к храбрости")]
+        [Range(0, 5)]
         public int? RecrutTypeBraveryBonus { get; set; }
 
         [Display(Name = "Описание")]

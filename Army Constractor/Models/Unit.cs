@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -22,12 +23,14 @@ namespace Army_Constractor.Models
         public int? ArmorID { get; set; }
 
         [Display(Name = "Оружие бл. боя")]
+        [ForeignKey("MeleeWeapon")]
         public int? MeleeWeaponID { get; set; }
 
         [Display(Name = "Оружие дал. боя")]
         public int? RangeWeaponID { get; set; }
 
         [Display(Name = "Вспомогательное оружие")]
+        [ForeignKey("SecondWeapon")]
         public int? SecondWeaponID { get; set; }
 
         [Display(Name = "Щит")]

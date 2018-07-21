@@ -189,10 +189,19 @@
     <Compile Include="Migrations\201807171420334_DescAttr.Designer.cs">
       <DependentUpon>201807171420334_DescAttr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807191321338_FluentApi.cs" />
+    <Compile Include="Migrations\201807191321338_FluentApi.Designer.cs">
+      <DependentUpon>201807191321338_FluentApi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807191336202_AnotherWay.cs" />
+    <Compile Include="Migrations\201807191336202_AnotherWay.Designer.cs">
+      <DependentUpon>201807191336202_AnotherWay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\Army.cs" />
     <Compile Include="Models\ArmyConstractorDB.cs" />
+    <Compile Include="Models\PricesCalc.cs" />
     <Compile Include="Models\RecrutType.cs" />
     <Compile Include="Models\MeleeWeapon.cs" />
     <Compile Include="Models\Mount.cs" />
@@ -201,6 +210,7 @@
     <Compile Include="Models\Unit.cs" />
     <Compile Include="Models\UnitsInArmy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ShieldsIndexModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -228,7 +238,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\pricecalculators.js" />
+    <Content Include="Scripts\recrutTypePriceOnLoad.js" />
+    <Content Include="Scripts\shieldpricecalculator.js" />
+    <Content Include="Scripts\recruttypepricecalculator.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -315,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807171420334_DescAttr.resx">
       <DependentUpon>201807171420334_DescAttr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807191321338_FluentApi.resx">
+      <DependentUpon>201807191321338_FluentApi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807191336202_AnotherWay.resx">
+      <DependentUpon>201807191336202_AnotherWay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

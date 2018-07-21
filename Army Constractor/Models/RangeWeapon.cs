@@ -20,6 +20,7 @@ namespace Army_Constractor.Models
         public int RanWeapRange { get; set; }
 
         [Display(Name = "Бронебойность")]
+        [Range(0, 5)]
         public int? RanWeapArmorIgnore { get; set; }
 
         [Display(Name = "Описание")]
