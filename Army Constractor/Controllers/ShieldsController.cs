@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Army_Constractor.Models;
-using Army_Constractor.ViewModels;
 
 namespace Army_Constractor.Controllers
 {
@@ -18,26 +17,6 @@ namespace Army_Constractor.Controllers
         // GET: Shields
         public ActionResult Index()
         {
-            //List<Shield> shields = db.Shields.ToList();
-            //List<Shield> ShieldsPrices = new List<Shield>();
-
-            //foreach (var item in shields)
-            //{
-            //    var price = item.ShieldDefBonus * 5;
-            //    ShieldsPrices.Add(new Shield()); { ShieldID = item.ShieldID, price});
-            //}
-
-            //Рабочая часть внизу
-
-            //var shield = PricesCalc.GetShieldPrice(this.HttpContext);
-
-            //var viewModel = new ShieldsIndexModel
-            //{
-            //    Shields = shield. GetShields(),
-            //    Price = shield.ShieldPrice()
-            //};
-
-            //return View(viewModel);
             return View(db.Shields.ToList());
         }
 
@@ -145,20 +124,5 @@ namespace Army_Constractor.Controllers
             }
             base.Dispose(disposing);
         }
-
-        //public List<Shield> GetShields()
-        //{
-        //    return db.Shields.ToList();
-        //}
-
-
-        //public int shieldPrice()
-        //{
-        //    int characteristic = db.Shields
-        //                        //.Where(c => c.ShieldID == )
-        //                        .Select(c => c.ShieldDefBonus).Sum();
-        //    int price = characteristic * 5;
-        //    return price;
-        //}
     }
 }

@@ -4,111 +4,123 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
+<h2>Редактировать юнита</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Unit</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.UnitID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UnitName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UnitName, new { htmlAttributes = new { @class = "form-control" } })
+<div class="form-horizontal">
+    <h4>@Html.DisplayFor(model => model.UnitName)</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.UnitID)
+
+    <table class="editTables" border="0">
+        <tr>
+            <td class="firstColumn">Название</td>
+            <td class="secondColumn">
+                @Html.EditorFor(model => model.UnitName, new { htmlAttributes = new { @class = "inputsMedium" } })
                 @Html.ValidationMessageFor(model => model.UnitName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RecrutTypeID, "RecrutTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("RecrutTypeID", null, htmlAttributes: new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">@Html.DisplayNameFor(model => model.RecrutType.RecrutTypeName)</td>
+            <td>
+                @Html.DropDownList("RecrutTypeID", null, htmlAttributes: new { @class = "inputsMedium" })
                 @Html.ValidationMessageFor(model => model.RecrutTypeID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ArmorID, "ArmorID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ArmorID", null, htmlAttributes: new { @class = "form-control" })
+                <input type="number" id="RecrutTypePrice" value="@Model.RecrutType.Price" hidden>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">@Html.DisplayNameFor(model => model.Armor.ArmorName)</td>
+            <td>
+                @Html.DropDownList("ArmorID", null, htmlAttributes: new { @class = "inputsMedium" })
                 @Html.ValidationMessageFor(model => model.ArmorID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MeleeWeaponID, "MeleeWeaponID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("MeleeWeaponID", null, htmlAttributes: new { @class = "form-control" })
+                <input type="number" id="ArmorPrice" value="@Model.Armor.Price" hidden>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">@Html.DisplayNameFor(model => model.MeleeWeapon.MelWeapName)</td>
+            <td>
+                @Html.DropDownList("MeleeWeaponID", null, htmlAttributes: new { @class = "inputsMedium" })
                 @Html.ValidationMessageFor(model => model.MeleeWeaponID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RangeWeaponID, "RangeWeaponID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("RangeWeaponID", null, htmlAttributes: new { @class = "form-control" })
+                <input type="number" id="MeleeWeaponPrice" value="@Model.MeleeWeapon.Price" hidden>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">@Html.DisplayNameFor(model => model.RangeWeapon.RanWeapName)</td>
+            <td>
+                @Html.DropDownList("RangeWeaponID", null, htmlAttributes: new { @class = "inputsMedium" })
                 @Html.ValidationMessageFor(model => model.RangeWeaponID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SecondWeaponID, "SecondWeaponID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("SecondWeaponID", null, htmlAttributes: new { @class = "form-control" })
+                <input type="number" id="RangeWeaponPrice" value="@Model.RangeWeapon.Price" hidden>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">@Html.DisplayNameFor(model => model.SecondWeaponID)</td>
+            <td>
+                @Html.DropDownList("SecondWeaponID", null, htmlAttributes: new { @class = "inputsMedium" })
                 @Html.ValidationMessageFor(model => model.SecondWeaponID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShieldID, "ShieldID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ShieldID", null, htmlAttributes: new { @class = "form-control" })
+                <input type="number" id="SecondWeaponPrice" value="@Model.SecondWeapon.Price" hidden>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">@Html.DisplayNameFor(model => model.Shield.ShieldName)</td>
+            <td>
+                @Html.DropDownList("ShieldID", null, htmlAttributes: new { @class = "inputsMedium" })
                 @Html.ValidationMessageFor(model => model.ShieldID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MountID, "MountID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("MountID", null, htmlAttributes: new { @class = "form-control" })
+                <input type="number" id="ShieldPrice" value="@Model.Shield.Price" hidden>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">@Html.DisplayNameFor(model => model.Mount.MountName)</td>
+            <td>
+                @Html.DropDownList("MountID", null, htmlAttributes: new { @class = "inputsMedium" })
                 @Html.ValidationMessageFor(model => model.MountID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NumberOfCombatants, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NumberOfCombatants, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="number" id="MountPrice" value="@Model.Mount.Price" hidden>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">@Html.DisplayNameFor(model => model.NumberOfCombatants)</td>
+            <td>
+                @Html.EditorFor(model => model.NumberOfCombatants, new { htmlAttributes = new { @class = "inputsMedium" } })
                 @Html.ValidationMessageFor(model => model.NumberOfCombatants, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">Стоимость</td>
+            <td>
+                <input type="number" id="UnitPrice" readonly class="inputsMedium">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.TextArea("Description", Model.Description, htmlAttributes: new { @class = "textArea" })
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColumn">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Сохранить" class="btn btn-default" />
+                    </div>
+                </div>
+            </td>
+            <td>
+                @Html.ActionLink("Подробнее", "Details", new { id = Model.UnitID }) |
+                @Html.ActionLink("Назад", "Index")
+            </td>
+        </tr>
+    </table>
 </div>
-
+}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/UnitPriceOnLoad")
 }

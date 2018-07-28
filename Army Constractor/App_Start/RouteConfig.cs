@@ -16,7 +16,7 @@ namespace Army_Constractor
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Armies", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Units", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

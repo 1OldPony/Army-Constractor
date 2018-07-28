@@ -1,62 +1,98 @@
-﻿using System;
+﻿using System
+    ;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace Army_Constractor.Models
 {
-    public partial class PricesCalc
+    public class PricesCalc
     {
         private ArmyConstractorDB db = new ArmyConstractorDB();
 
-        string ShieldPriceId { get; set; }
-        public const string ShieldSessionKey = "ShieldId";
-
-        public static PricesCalc GetShieldPrice(HttpContextBase context)
+        public int ShieldPriceFromID(int? id)
         {
-            var shieldPrice = new PricesCalc();
-            shieldPrice.ShieldPriceId = shieldPrice.GetPriceId(context);
-            return shieldPrice;
+            int ShDef = db.Shields.Single(p => p.ShieldID == id).ShieldDefBonus*5;
+            return ShDef;
         }
 
-        public string GetPriceId(HttpContextBase context)
+        public int? RecrutTypePriceFromID(int? id)
         {
-            if (context.Session[ShieldSessionKey] == null)
+            int Rank = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeRank * 10;
+            int? AttBonus = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeAttBonus*5;
+            int? DefBonus = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeDefBonus*5;
+            int? Absorb = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeAbsorb*5;
+            int? ArmorIgnore = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeArmorIgnore*5;
+            int? Move = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeMove*2;
+            int? BraveryBonus = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeBraveryBonus * 5;
+
+            int? Total = Rank + AttBonus + DefBonus + Absorb + ArmorIgnore + Move + BraveryBonus;
+            return Total;
+        }
+
+        public int? ArmorPriceFromID(int? id)
+        {
+            int Absorb = db.Armors.Single(p => p.ArmorID == id).ArmorAbsorb * 5;
+            int? MoveDecrease = db.Armors.Single(p => p.ArmorID == id).ArmorMoveDecrease * 2;
+
+            int? Total = Absorb - MoveDecrease;
+            return Total;
+        }
+
+        public int? MeleeWeapPriceFromID(int? id)
+        {
+            int Range = db.MeleeWeapons.Single(p => p.MeleeWeaponID == id).Range * 20;
+            int ArmorIgnore = db.MeleeWeapons.Single(p => p.MeleeWeaponID == id).MelWeapArmorIgnore * 5;
+            bool TwoHanded= db.MeleeWeapons.Single(p=>p.MeleeWeaponID == id).TwoHanded;
+            bool Pare = db.MeleeWeapons.Single(p => p.MeleeWeaponID == id).Pare;
+
+            int TH = 0;
+            int Pr = 0;
+            if (TwoHanded==true)
             {
-                if (!string.IsNullOrWhiteSpace(context.User.Identity.Name))
-                {
-                    context.Session[ShieldSessionKey] = context.User.Identity.Name;
-                }
-                else
-                {
-                    // Generate a new random GUID using System.Guid class
-                    Guid tempCartId = Guid.NewGuid();
-                    // Send tempCartId back to client as a cookie
-                    context.Session[ShieldSessionKey] = tempCartId.ToString();
-                }
+                TH = 20;
             }
-            return context.Session[ShieldSessionKey].ToString();
+            if (Pare==true)
+            {
+                Pr = 20;
+            }
+
+            int? Total = Range + ArmorIgnore + Pr -TH;
+            return Total;
         }
-        
-        public List<Shield> GetShields()
+
+        public int? MountPriceFromID(int? id)
         {
-            return db.Shields.ToList();
+            int Rank = db.Mounts.Single(p => p.MountID == id).MountRank * 10;
+            int Range = db.Mounts.Single(p => p.MountID == id).MountRange * 20;
+            int? ArmorIgnore = db.Mounts.Single(p => p.MountID == id).MountArmorIgnore * 5;
+            int? Absorb = db.Mounts.Single(p => p.MountID == id).MountAbsorb * 5;
+            int? DefBonus = db.Mounts.Single(p => p.MountID == id).MountDefBonus * 5;
+            int? Move = db.Mounts.Single(p => p.MountID == id).MountMove * 2;
+            int? AttBonus = db.Mounts.Single(p => p.MountID == id).MountAttBonus * 5;
+            bool Flying = db.Mounts.Single(p => p.MountID == id).Flying;
+
+            int Fl = 0;
+            if (Flying == true)
+            {
+                Fl = 20;
+            }
+
+            int? Total = Rank + AttBonus + DefBonus + Absorb + ArmorIgnore + Move + Fl + Range;
+            return Total;
         }
 
-
-        public int? ShieldPrice()
+        public int? RangeWeapFromID(int? id)
         {
-            int? ShieldDef = db.Shields
-                                .Where(c => c.ShieldID.ToString() == ShieldPriceId)
-                                .Select(c => (int?)c.ShieldDefBonus).Sum();
-            int? price = ShieldDef * 5;
-            return price ?? 0;
+            int Range = db.RangeWeapons.Single(p => p.RangeWeaponID == id).RanWeapRange * 3;
+            int? ArmorIgnore = db.RangeWeapons.Single(p => p.RangeWeaponID == id).RanWeapArmorIgnore * 6;
+            int? AttBonus = db.RangeWeapons.Single(p => p.RangeWeaponID == id).RanWeapAttBonus * 6;
+            
+            int? Total = Range + ArmorIgnore + AttBonus;
+            return Total;
         }
-
-
-
-
     }
-
     
+
 }
+

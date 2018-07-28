@@ -8,22 +8,42 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="menu">
+    <div class="mymenu">
         <ul>
-            <li>@Html.ActionLink("Армии", "Index", "Armies")</li>
-            <li>@Html.ActionLink("Балуюсь со стилями в экшнлинках", "Index", "Armies", null, new { @class = "actionlinks" }) </li>
-            <li>@Html.ActionLink("Юниты", "Index", "Units")</li>
-            <li>@Html.ActionLink("Оружие ближнего боя", "Index", "MeleeWeapons")</li>
-            <li>@Html.ActionLink("Оружие дальнего боя", "Index", "RangeWeapons")</li>
-            <li>@Html.ActionLink("Броня", "Index", "Armors")</li>
-            <li>@Html.ActionLink("Ездовые животные", "Index", "Mounts")</li>
-            <li>@Html.ActionLink("Щиты", "Index", "Shields")</li>
-            <li>@Html.ActionLink("Рекруты", "Index", "RecrutTypes")</li>
+            <li>@Html.ActionLink("Юниты", "Index", "Units", null, new { @class = "actionlinks" })</li>
+            <li>@Html.ActionLink("Оружие ближнего боя", "Index", "MeleeWeapons", null, new { @class = "actionlinks" })</li>
+            <li>@Html.ActionLink("Оружие дальнего боя", "Index", "RangeWeapons", null, new { @class = "actionlinks" })</li>
+            <li>@Html.ActionLink("Броня", "Index", "Armors", null, new { @class = "actionlinks" })</li>
+            <li>@Html.ActionLink("Ездовые животные", "Index", "Mounts", null, new { @class = "actionlinks" })</li>
+            <li>@Html.ActionLink("Щиты", "Index", "Shields", null, new { @class = "actionlinks" })</li>
+            <li>@Html.ActionLink("Типы рекрутов", "Index", "RecrutTypes", null, new { @class = "actionlinks" })</li>
         </ul>
+        <div>
+            @{
+                List<SelectListItem> list = new List<SelectListItem>();
+
+                list.Add(new SelectListItem() { Text = "Юниты" });
+                list.Add(new SelectListItem() { Text = "Оружие ближнего боя" });
+                list.Add(new SelectListItem() { Text = "Оружие дальнего боя" });
+                list.Add(new SelectListItem() { Text = "Броня" });
+                list.Add(new SelectListItem() { Text = "Типы рекрутов" });
+                list.Add(new SelectListItem() { Text = "Ездовые животные" });
+                list.Add(new SelectListItem() { Text = "Щиты" });
+
+            }
+            @using (Html.BeginForm())
+            {
+                <p>
+                    @Html.TextBox("SearchString")
+                    @Html.DropDownList("Category", list)
+                    <input class="submit-search-button" type="submit" value="Поиск" formaction="@Url.Action("Search","ArmyConstractor")" />
+                </p>
+            }
+        </div>
     </div>
-    @RenderBody()
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @RenderBody()
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Army_Constractor.Models
 {
-    public class MeleeWeapon
+    public partial class MeleeWeapon
     {
         public int MeleeWeaponID { get; set; }
 
@@ -33,5 +34,33 @@ namespace Army_Constractor.Models
         [Display(Name = "Описание")]
         [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
+
+        [NotMapped]
+        public int? Price
+        {
+            get => MeleeWeaponPrice();
+            set { }
+        }
+    }
+
+    public partial class MeleeWeapon
+    {
+        public int? MeleeWeaponPrice()
+        {
+            int TH = 0;
+            int Pr = 0;
+            if (TwoHanded == true)
+            {
+                TH = 20;
+            }
+
+            if (Pare == true)
+            {
+                Pr = 20;
+            }
+
+            int? MeleeWeapPrice = (Range * 20) + (MelWeapArmorIgnore * 5) + Pr - TH;
+            return MeleeWeapPrice;
+        }
     }
 }

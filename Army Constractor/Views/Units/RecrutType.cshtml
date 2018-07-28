@@ -1,0 +1,62 @@
+﻿@model Army_Constractor.Models.Unit
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<table class="tableElement" border="1">
+    <tr>
+        <td colspan="7" style="font-size:x-large">@Model.RecrutType.RecrutTypeName</td>
+    </tr>
+    <tr>
+        <td>Пгл</td>
+        <td>Брб</td>
+        <td>Атк</td>
+        <td>Защ</td>
+        <td>Хрб</td>
+        <td>Двж</td>
+        <td rowspan="8" style="font-size:xx-large" id="price">
+            @Model.RecrutType.Price
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Model.RecrutType.RecrutTypeArmorIgnore
+        </td>
+        <td>
+            @Model.RecrutType.RecrutTypeAbsorb
+        </td>
+        <td>
+            <script type="text/javascript">
+                    document.write(@Model.RecrutType.RecrutTypeAttBonus
+                        + @Model.RecrutType.RecrutTypeRank);
+            </script>
+        </td>
+        <td>
+            <script type="text/javascript">
+                    document.write(@Model.RecrutType.RecrutTypeDefBonus
+                        + @Model.RecrutType.RecrutTypeRank);
+            </script>
+        </td>
+        <td>
+            <script type="text/javascript">
+                    document.write(@Model.RecrutType.RecrutTypeBraveryBonus
+                        + @Model.RecrutType.RecrutTypeRank);
+            </script>
+        </td>
+        <td>
+            @Model.RecrutType.RecrutTypeMove
+        </td>
+    </tr>
+    <tr>
+        <td align="right" colspan="6" style="font-size:large">Стоимость:</td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            @*@Html.ActionLink("Редактировать", "Edit", new { id = Model.RecrutTypeID }) |
+            @Html.ActionLink("Подробнее", "Details", new { id = Model.RecrutTypeID }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = Model.RecrutTypeID })*@
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Army_Constractor.Models.Armor">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAABQAgAAAAAAAAAAAAAAACAAAAAAAAAAABAgA=</HashCode>
+      <FileName>Models\Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Army_Constractor.Models.MeleeWeapon">
+    <Position X="0.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAABAQAwCAAAAAAAgAAAAAAAAAAAAAAAAAAAIAQ=</HashCode>
+      <FileName>Models\MeleeWeapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Army_Constractor.Models.Mount">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAUAiAwAAAAAAAAAACgAAAAAAAAAAEEAEBAA=</HashCode>
+      <FileName>Models\Mount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Army_Constractor.Models.PricesCalc">
+    <Position X="6" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAQAAAAIAAABAAEAAAAAQAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\PricesCalc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Army_Constractor.Models.RangeWeapon">
+    <Position X="3.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAMAAAAQAgAAAAAAAAAAQAAAAAAAAAAAAAIAAAAgA=</HashCode>
+      <FileName>Models\RangeWeapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Army_Constractor.Models.RecrutType">
+    <Position X="0.75" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAASAgAIgAAEAAAAAAAAAAAAAQAAABAAAEAgE=</HashCode>
+      <FileName>Models\RecrutType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Army_Constractor.Models.Shield">
+    <Position X="0.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAQAgAQgAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Models\Shield.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Army_Constractor.Models.Unit">
+    <Position X="6.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAEIAAAQEgYQkAAAAAEAAAAAAAAoAAEAAEAAEBIAA=</HashCode>
+      <FileName>Models\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="8.25" />
+</ClassDiagram>

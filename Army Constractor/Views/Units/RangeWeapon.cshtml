@@ -1,0 +1,40 @@
+﻿@model Army_Constractor.Models.Unit
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<table class="tableElement" border="1">
+    <tr>
+        <td colspan="4" style="font-size:x-large">@Model.RangeWeapon.RanWeapName</td>
+    </tr>
+    <tr>
+        <td>Брб</td>
+        <td>Атк</td>
+        <td>Рад</td>
+        <td rowspan="4" style="font-size:xx-large">
+            @Model.RangeWeapon.Price
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Model.RangeWeapon.RanWeapArmorIgnore
+        </td>
+        <td>
+            @Model.RangeWeapon.RanWeapAttBonus
+        </td>
+        <td>
+            @Model.RangeWeapon.RanWeapRange
+        </td>
+    </tr>
+    <tr>
+        <td align="right" colspan="3" style="font-size:large">Стоимость:</td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            @*@Html.ActionLink("Редактировать", "Edit", new { id = Model.RangeWeapon.RangeWeaponID }) |
+            @Html.ActionLink("Подробнее", "Details", new { id = Model.RangeWeapon.RangeWeaponID }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = Model.RangeWeapon.RangeWeaponID })*@
+        </td>
+    </tr>
+</table>

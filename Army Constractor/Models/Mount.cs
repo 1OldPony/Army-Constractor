@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Army_Constractor.Models
 {
-    public class Mount
+    public partial class Mount
     {
         public int MountID { get; set; }
 
@@ -53,5 +54,27 @@ namespace Army_Constractor.Models
         [Display(Name = "Описание")]
         [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
+
+        [NotMapped]
+        public int? Price
+        {
+            get => MountPrice();
+            set { }
+        }
+    }
+
+    public partial class Mount
+    {
+        public int? MountPrice()
+        {
+            int Fl = 0;
+            if (Flying==true)
+            {
+                Fl = 20;
+            }
+            int? MountPrice = (MountRange * 20) + (MountRank * 10)
+                + (MountArmorIgnore * 5) + (MountAbsorb * 5) + (MountDefBonus * 5) + (MountAttBonus * 5) + (MountMove*2) + Fl;
+            return MountPrice;
+        }
     }
 }

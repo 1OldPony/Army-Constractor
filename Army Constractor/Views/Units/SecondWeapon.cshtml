@@ -1,0 +1,44 @@
+﻿@model Army_Constractor.Models.Unit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<table class="tableElement" border="1">
+    <tr>
+        <td colspan="5" style="font-size:x-large">@Model.SecondWeapon.MelWeapName</td>
+    </tr>
+    <tr>
+        <td>Брб</td>
+        <td>Рад</td>
+        <td>Двр</td>
+        <td>Пар</td>
+        <td rowspan="8" style="font-size:xx-large" id="price">
+            @Model.SecondWeapon.Price
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Model.SecondWeapon.MelWeapArmorIgnore
+        </td>
+        <td>
+            @Model.SecondWeapon.Range
+        </td>
+        <td>
+            @Html.CheckBoxFor(m => Model.SecondWeapon.TwoHanded)
+        </td>
+        <td>
+            @Html.CheckBoxFor(m => Model.SecondWeapon.Pare)
+        </td>
+    </tr>
+    <tr>
+        <td align="right" colspan="4" style="font-size:large">Стоимость:</td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            @*@Html.ActionLink("Редактировать", "Edit", new { id = Model.MeleeWeapon.MeleeWeaponID }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = Model.MeleeWeapon.MeleeWeaponID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = Model.MeleeWeapon.MeleeWeaponID })*@
+        </td>
+    </tr>
+</table>

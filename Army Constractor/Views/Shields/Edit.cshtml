@@ -41,8 +41,8 @@
             </tr>
             <tr>
                 <td class="firstColumn">Стоимость</td>
-                <td colspan="3" @*onload="shieldPriceCalc()"*@>
-                    <input type="number" id="ShieldPrice" readonly class="inputsMedium">
+                <td colspan="3">
+                    <input type="number" id="ShieldPrice" value="@Model.Price" readonly class="inputsMedium">
                 </td>
             <tr>
                 <td colspan="4">
@@ -73,5 +73,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/shieldpricecalculator")
-    @Scripts.Render("~/bundles/shieldpricecalculator2")
 }

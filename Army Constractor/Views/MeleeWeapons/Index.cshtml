@@ -4,60 +4,51 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Оружие ближнего боя</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Создать новое", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MelWeapName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Range)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MelWeapArmorIgnore)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TwoHanded)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pare)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MelWeapName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Range)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MelWeapArmorIgnore)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TwoHanded)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pare)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MeleeWeaponID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MeleeWeaponID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MeleeWeaponID })
-        </td>
-    </tr>
+
+@foreach (var item in Model)
+{
+    <table class="tableElement" border="1">
+        <tr>
+            <td colspan="5" style="font-size:x-large">@item.MelWeapName</td>
+        </tr>
+        <tr>
+            <td>Брб</td>
+            <td>Рад</td>
+            <td>Двр</td>
+            <td>Пар</td>
+            <td rowspan="8" style="font-size:xx-large" id="price">
+                @item.Price
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @item.MelWeapArmorIgnore
+            </td>
+            <td>
+                @item.Range
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => item.TwoHanded)
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => item.Pare)
+            </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="4" style="font-size:large">Стоимость:</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.MeleeWeaponID }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.MeleeWeaponID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.MeleeWeaponID })
+            </td>
+        </tr>
+    </table>
 }
-
-</table>

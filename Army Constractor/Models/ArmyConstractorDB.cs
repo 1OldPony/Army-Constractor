@@ -20,26 +20,11 @@ namespace Army_Constractor.Models
         }
 
         public DbSet<Armor> Armors { get; set; }
-        public DbSet<Army> Armies { get; set; }
         public DbSet<MeleeWeapon> MeleeWeapons { get; set; }
         public DbSet<Mount> Mounts { get; set; }
         public DbSet<RangeWeapon> RangeWeapons { get; set; }
         public DbSet<RecrutType> RecrutTypes { get; set; }
         public DbSet<Shield> Shields { get; set; }
         public DbSet<Unit> Units { get; set; }
-        public DbSet<UnitsInArmy> UnitsInArmies { get; set; }
-
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Unit>()
-        //        .HasOptional(u=>u.MeleeWeapon)
-        //        .WithOptionalDependent()
-        //        .Map(c=>c.MapKey("MeleeWeaponID"));
-
-        //    modelBuilder.Entity<Unit>()
-        //        .HasOptional(u => u.SecondWeapon)
-        //        .WithOptionalDependent()
-        //        .Map(c => c.MapKey("SecondWeaponID"));
-        //}
     }
 }

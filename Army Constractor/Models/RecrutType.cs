@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Army_Constractor.Models
 {
-    public class RecrutType
+    public partial class RecrutType
     {
         public int RecrutTypeID { get; set; }
 
@@ -47,5 +48,23 @@ namespace Army_Constractor.Models
         [Display(Name = "Описание")]
         [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
+
+        [NotMapped]
+        public int? Price
+        {
+            get => RecrutTypePrice();
+            set { }
+        }
+    }
+
+    public partial class RecrutType
+    {
+        public int? RecrutTypePrice()
+        {
+            int? RTPrice = (RecrutTypeRank * 10) + (RecrutTypeAttBonus * 5)
+                + (RecrutTypeDefBonus*5) + (RecrutTypeAbsorb*5) + (RecrutTypeArmorIgnore*5) 
+                + (RecrutTypeMove*2) + (RecrutTypeBraveryBonus*5);
+            return RTPrice;
+        }
     }
 }

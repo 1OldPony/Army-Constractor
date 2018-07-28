@@ -7,12 +7,12 @@ using System.Web;
 
 namespace Army_Constractor.Models
 {
-    public class Unit
+    public partial class Unit
     {
         public int UnitID { get; set; }
 
         [Required(ErrorMessage = "Необходимо ввести название")]
-        [Display(Name = "Отряд")]
+        [Display(Name = "Юнит")]
         public string UnitName { get; set; }
 
         [Required(ErrorMessage = "Без рекрутов создать юнита невозможно")]
@@ -22,11 +22,11 @@ namespace Army_Constractor.Models
         [Display(Name = "Доспех")]
         public int? ArmorID { get; set; }
 
-        [Display(Name = "Оружие бл. боя")]
+        [Display(Name = "Оружие ближнего боя")]
         [ForeignKey("MeleeWeapon")]
         public int? MeleeWeaponID { get; set; }
 
-        [Display(Name = "Оружие дал. боя")]
+        [Display(Name = "Оружие дальнего боя")]
         public int? RangeWeaponID { get; set; }
 
         [Display(Name = "Вспомогательное оружие")]
@@ -47,7 +47,15 @@ namespace Army_Constractor.Models
         [Display(Name = "описание")]
         [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
-
+        
+        [NotMapped]
+        [Display(Name = "Стоимость")]
+        public int? Price
+        {
+            get => UnitPrice();
+            set { }
+        }
+        
         public virtual Armor Armor { get; set; }
         public virtual RecrutType RecrutType { get; set; }
         public virtual MeleeWeapon MeleeWeapon { get; set; }
@@ -55,7 +63,18 @@ namespace Army_Constractor.Models
         public virtual Mount Mount { get; set; }
         public virtual RangeWeapon RangeWeapon { get; set; }
         public virtual Shield Shield { get; set; }
+    }
 
-        public virtual List<UnitsInArmy> UnitsInArmies { get; set; }
+    public partial class Unit
+    {
+        PricesCalc PC = new PricesCalc();
+        public int? UnitPrice()
+        {
+
+            int? UPrice = (PC.ShieldPriceFromID(ShieldID)+ PC.ArmorPriceFromID(ArmorID) + PC.MeleeWeapPriceFromID(MeleeWeaponID) 
+                + PC.MeleeWeapPriceFromID(SecondWeaponID) + PC.MountPriceFromID(MountID) + PC.RangeWeapFromID(RangeWeaponID) 
+                + PC.RecrutTypePriceFromID(RecrutTypeID))*NumberOfCombatants;
+            return UPrice;
+        }
     }
 }

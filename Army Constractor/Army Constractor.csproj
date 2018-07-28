@@ -154,8 +154,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ArmiesController.cs" />
     <Compile Include="Controllers\ArmorsController.cs" />
+    <Compile Include="Controllers\ArmyConstractorController.cs" />
     <Compile Include="Controllers\MeleeWeaponsController.cs" />
     <Compile Include="Controllers\MountsController.cs" />
     <Compile Include="Controllers\RangeWeaponsController.cs" />
@@ -201,9 +201,20 @@
     <Compile Include="Migrations\201807211816465_RangAtt.Designer.cs">
       <DependentUpon>201807211816465_RangAtt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807212035591_What.cs" />
+    <Compile Include="Migrations\201807212035591_What.Designer.cs">
+      <DependentUpon>201807212035591_What.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807262008469_PriceAndArmies.cs" />
+    <Compile Include="Migrations\201807262008469_PriceAndArmies.Designer.cs">
+      <DependentUpon>201807262008469_PriceAndArmies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807262253458_WholePrices!.cs" />
+    <Compile Include="Migrations\201807262253458_WholePrices!.Designer.cs">
+      <DependentUpon>201807262253458_WholePrices!.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Armor.cs" />
-    <Compile Include="Models\Army.cs" />
     <Compile Include="Models\ArmyConstractorDB.cs" />
     <Compile Include="Models\PricesCalc.cs" />
     <Compile Include="Models\RecrutType.cs" />
@@ -212,9 +223,8 @@
     <Compile Include="Models\RangeWeapon.cs" />
     <Compile Include="Models\Shield.cs" />
     <Compile Include="Models\Unit.cs" />
-    <Compile Include="Models\UnitsInArmy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ShieldsIndexModel.cs" />
+    <Compile Include="ViewModels\SearchResults.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -231,6 +241,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -242,10 +253,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\recrutTypePriceOnLoad.js" />
-    <Content Include="Scripts\shieldpricecalcOnLoad.js" />
-    <Content Include="Scripts\shieldpricecalculator2.js" />
+    <Content Include="Scripts\shieldpricecalculator.js" />
     <Content Include="Scripts\recruttypepricecalculator.js" />
+    <Content Include="Scripts\UnitPriceCalculator.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -262,11 +272,6 @@
     <Content Include="Views\Armors\Details.cshtml" />
     <Content Include="Views\Armors\Edit.cshtml" />
     <Content Include="Views\Armors\Index.cshtml" />
-    <Content Include="Views\Armies\Create.cshtml" />
-    <Content Include="Views\Armies\Delete.cshtml" />
-    <Content Include="Views\Armies\Details.cshtml" />
-    <Content Include="Views\Armies\Edit.cshtml" />
-    <Content Include="Views\Armies\Index.cshtml" />
     <Content Include="Views\MeleeWeapons\Create.cshtml" />
     <Content Include="Views\MeleeWeapons\Delete.cshtml" />
     <Content Include="Views\MeleeWeapons\Details.cshtml" />
@@ -297,6 +302,14 @@
     <Content Include="Views\RangeWeapons\Details.cshtml" />
     <Content Include="Views\RangeWeapons\Edit.cshtml" />
     <Content Include="Views\RangeWeapons\Index.cshtml" />
+    <Content Include="Views\Units\RecrutType.cshtml" />
+    <Content Include="Views\Units\Shield.cshtml" />
+    <Content Include="Views\Units\RangeWeapon.cshtml" />
+    <Content Include="Views\Units\Mount.cshtml" />
+    <Content Include="Views\Units\MeleeWeapon.cshtml" />
+    <Content Include="Views\Units\Armor.cshtml" />
+    <Content Include="Views\Units\SecondWeapon.cshtml" />
+    <Content Include="Views\ArmyConstractor\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,6 +354,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807211816465_RangAtt.resx">
       <DependentUpon>201807211816465_RangAtt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807212035591_What.resx">
+      <DependentUpon>201807212035591_What.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807262008469_PriceAndArmies.resx">
+      <DependentUpon>201807262008469_PriceAndArmies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807262253458_WholePrices!.resx">
+      <DependentUpon>201807262253458_WholePrices!.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

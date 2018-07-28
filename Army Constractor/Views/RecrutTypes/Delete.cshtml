@@ -53,20 +53,7 @@
     <tr>
         <td>Стоимость:</td>
         <td>
-            <script type="text/javascript">
-                        var charPrices = [[@Html.DisplayFor(model => model.RecrutTypeAbsorb),5],
-                            [@Html.DisplayFor(model => model.RecrutTypeArmorIgnore),5],
-                            [@Html.DisplayFor(model => model.RecrutTypeAttBonus),5],
-                            [@Html.DisplayFor(model => model.RecrutTypeBraveryBonus),5],
-                            [@Html.DisplayFor(model => model.RecrutTypeDefBonus),5],
-                            [@Html.DisplayFor(model => model.RecrutTypeMove),2],
-                            [@Html.DisplayFor(model => model.RecrutTypeRank),10]];
-                        var totalPrice = 0;
-                        for (var i = 0; i < charPrices.length; i++) {
-                            if (!isNaN(charPrices[i][0])) {
-                                totalPrice += charPrices[i][1] * charPrices[i][0]};};
-                        document.write(totalPrice);
-            </script>
+            @Html.DisplayFor(model => model.Price)
         </td>
     </tr>
 </table>

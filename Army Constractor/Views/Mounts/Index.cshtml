@@ -4,84 +4,70 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Ездовые животные</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Создать новое", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MountName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MountRange)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MountRank)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MountArmorIgnore)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MountAbsorb)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MountDefBonus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MountAttBonus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MountMove)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Flying)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MountName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MountRange)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MountRank)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MountArmorIgnore)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MountAbsorb)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MountDefBonus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MountAttBonus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MountMove)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Flying)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MountID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MountID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MountID })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <table class="tableElement" border="1">
+        <tr>
+            <td colspan="8" style="font-size:x-large">@item.MountName</td>
+        </tr>
+        <tr>
+            <td>Пгл</td>
+            <td>Брб</td>
+            <td>Атк</td>
+            <td>Защ</td>
+            <td>Хрб</td>
+            <td>Двж</td>
+            <td>Плт</td>
+            <td rowspan="8" style="font-size:xx-large" id="price">
+                @item.Price
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @item.MountAbsorb
+            </td>
+            <td>
+                @item.MountArmorIgnore
+            </td>
+            <td>
+                <script type="text/javascript">
+                    document.write(@item.MountRank
+                        + @item.MountAttBonus);
+                </script>
+            </td>
+            <td>
+                <script type="text/javascript">
+                    document.write(@item.MountDefBonus
+                        + @item.MountRank);
+                </script>
+            </td>
+            <td>
+                @item.MountRange
+            </td>
+            <td>
+                @item.MountMove
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => item.Flying)
+            </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="7" style="font-size:large">Стоимость:</td>
+        </tr>
+        <tr>
+            <td colspan="7">
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.MountID }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.MountID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.MountID })
+            </td>
+        </tr>
+    </table>
 }
 
-</table>
+

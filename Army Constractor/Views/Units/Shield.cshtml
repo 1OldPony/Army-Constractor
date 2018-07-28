@@ -1,0 +1,32 @@
+﻿@model Army_Constractor.Models.Unit
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="tableElement" border="1">
+    <tr>
+        <td colspan="2" style="font-size:x-large">@Model.Shield.ShieldName</td>
+    </tr>
+    <tr>
+        <td>Защ</td>
+        <td rowspan="3" style="font-size:xx-large">
+            @Model.Shield.Price
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Model.Shield.ShieldDefBonus
+        </td>
+    </tr>
+    <tr>
+        <td align="right" style="font-size:large">Стоимость:</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            @*@Html.ActionLink("Редактировать", "Edit", new { id = item.ShieldID }) |
+            @Html.ActionLink("Подробнее", "Details", new { id = item.ShieldID }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.ShieldID })*@
+        </td>
+    </tr>
+</table>

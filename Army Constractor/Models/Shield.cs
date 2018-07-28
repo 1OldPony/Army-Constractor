@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Army_Constractor.Models
 {
-    public class Shield
+    public partial class Shield
     {
         public int ShieldID { get; set; }
 
@@ -22,5 +23,23 @@ namespace Army_Constractor.Models
         [Display(Name = "Описание")]
         [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
+
+        [NotMapped]
+        public int? Price
+        {
+            get => ShieldPrice();
+            set {}
+        }
     }
+
+    public partial class Shield
+    {
+
+        public int? ShieldPrice()
+        {
+            int? ShPrice = ShieldDefBonus * 5;
+            return ShPrice;
+        }
+    }
+
 }

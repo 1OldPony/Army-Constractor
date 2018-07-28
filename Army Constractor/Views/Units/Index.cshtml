@@ -7,14 +7,14 @@
 <h2>Юниты</h2>
 
 <p>
-    @Html.ActionLink("Создать нового", "Create")
+    @Html.ActionLink("Создать нового", "Create", null, new { @class = "actionlinks" })
 </p>
 
 @foreach (var item in Model)
 {
     <table class="tableElement" border="1">
         <tr>
-            <td colspan="15" style="font-size:x-large">@Html.DisplayFor(modelItem => item.UnitName)</td>
+            <td colspan="16" style="font-size:x-large">@Html.DisplayFor(modelItem => item.UnitName)</td>
         </tr>
         <tr>
             <td colspan="3">Стрельба</td>
@@ -26,33 +26,9 @@
             <td rowspan="2">Хрб</td>
             <td rowspan="2">Двж</td>
             <td rowspan="2">КлБ</td>
+            <td rowspan="2">Ежв</td>
             <td rowspan="6" style="font-size:xx-large">
-                @*<script type="text/javascript">
-                    var charPrices = [[@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeAbsorb),5],
-                        [@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeArmorIgnore),5],
-                        [@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeAttBonus),5],
-                        [@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeBraveryBonus),5],
-                        [@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeDefBonus),5],
-                        [@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeMove),2],
-                        [@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeRank), 10],
-                        [@Html.DisplayFor(modelitem => item.Armor.ArmorAbsorb), 5],
-                        [@Html.DisplayFor(modelitem => item.MeleeWeapon.MelWeapArmorIgnore), 5],
-                        [@Html.DisplayFor(modelitem => item.MeleeWeapon.Range), 20],
-                        [@Html.DisplayFor(modelitem => item.MeleeWeapon.Pare), 15],
-                        [@Html.DisplayFor(modelitem => item.), 20],
-
-
-
-                    ];
-                        [@Html.DisplayFor(modelitem => item.Armor.ArmorMoveDecrease), 5]
-                        [@Html.DisplayFor(modelitem => item.MeleeWeapon.TwoHanded), 10],
-                    var totalPrice = 0;
-                    for (var i = 0; i < charPrices.length; i++) {
-                        if (!isNaN(charPrices[i][0])) {
-                            totalPrice += charPrices[i][1] * charPrices[i][0]};
-                    };
-                    document.write(totalPrice);
-                </script>*@
+                @item.Price
             </td>
         </tr>
         <tr>
@@ -61,29 +37,29 @@
             <td>Брб</td>
         </tr>
         <tr>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.RangeWeapon.RanWeapAttBonus)
                         + @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeAttBonus))
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.RangeWeapon.RanWeapRange))
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.RangeWeapon.RanWeapArmorIgnore))
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeAbsorb)
                         + @Html.DisplayFor(modelitem => item.Armor.ArmorAbsorb))
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeArmorIgnore)
                         + @Html.DisplayFor(modelitem => item.MeleeWeapon.MelWeapArmorIgnore) + "/")
@@ -91,43 +67,47 @@
                         + @Html.DisplayFor(modelitem => item.SecondWeapon.MelWeapArmorIgnore))
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeAttBonus)
                         + @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeRank));
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.MeleeWeapon.Range) + "/"
                         + @Html.DisplayFor(modelitem => item.SecondWeapon.Range));
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeDefBonus)
                         + @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeRank)
                         + @Html.DisplayFor(modelitem => item.Shield.ShieldDefBonus));
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 <script type="text/javascript">
                     document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeBraveryBonus)
                         + @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeRank));
                 </script>
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeMove)
             </td>
-            <td class="tableCaracteristic">
+            <td>
                 @Html.DisplayFor(modelitem => item.NumberOfCombatants)
+            </td>
+            <td>
+                @Html.ActionLink(@item.Mount.MountName, "Details", "Mounts", new { id = item.MountID })
+                
             </td>
         </tr>
         <tr>
-            <td align="right" colspan="11" style="font-size:large">Стоимость:</td>
+            <td align="right" colspan="12" style="font-size:large">Стоимость:</td>
         </tr>
         <tr>
-            <td colspan="11">
+            <td colspan="12">
                 @Html.ActionLink("Редактировать", "Edit", new { id = item.UnitID }) |
                 @Html.ActionLink("Подробнее", "Details", new { id = item.UnitID }) |
                 @Html.ActionLink("Удалить", "Delete", new { id = item.UnitID })
@@ -135,89 +115,3 @@
         </tr>
     </table>
 }
-
-
-
-
-
-
-
-
-
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Armor.ArmorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mount.MountName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RangeWeapon.RanWeapName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecrutType.RecrutTypeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shield.ShieldName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UnitName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MeleeWeapon.MelWeapName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SecondWeaponID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfCombatants)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Armor.ArmorName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mount.MountName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RangeWeapon.RanWeapName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RecrutType.RecrutTypeName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Shield.ShieldName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MeleeWeapon.MelWeapName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecondWeapon.MelWeapName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfCombatants)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.UnitID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.UnitID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.UnitID })
-            </td>
-        </tr>
-    }
-
-</table>*@
