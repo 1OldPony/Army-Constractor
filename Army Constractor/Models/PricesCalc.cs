@@ -10,10 +10,11 @@ namespace Army_Constractor.Models
     {
         private ArmyConstractorDB db = new ArmyConstractorDB();
 
-        public int ShieldPriceFromID(int? id)
+
+        public int? ShieldPriceFromID(int? id)
         {
-            int ShDef = db.Shields.Single(p => p.ShieldID == id).ShieldDefBonus*5;
-            return ShDef;
+            int? ShDef = db.Shields.Single(p => p.ShieldID == id).ShieldDefBonus*5;
+            return ShDef ?? 0;
         }
 
         public int? RecrutTypePriceFromID(int? id)
@@ -27,7 +28,7 @@ namespace Army_Constractor.Models
             int? BraveryBonus = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeBraveryBonus * 5;
 
             int? Total = Rank + AttBonus + DefBonus + Absorb + ArmorIgnore + Move + BraveryBonus;
-            return Total;
+            return Total ?? 0;
         }
 
         public int? ArmorPriceFromID(int? id)
@@ -36,7 +37,7 @@ namespace Army_Constractor.Models
             int? MoveDecrease = db.Armors.Single(p => p.ArmorID == id).ArmorMoveDecrease * 2;
 
             int? Total = Absorb - MoveDecrease;
-            return Total;
+            return Total ?? 0;
         }
 
         public int? MeleeWeapPriceFromID(int? id)
@@ -58,7 +59,7 @@ namespace Army_Constractor.Models
             }
 
             int? Total = Range + ArmorIgnore + Pr -TH;
-            return Total;
+            return Total ?? 0;
         }
 
         public int? MountPriceFromID(int? id)
@@ -79,7 +80,7 @@ namespace Army_Constractor.Models
             }
 
             int? Total = Rank + AttBonus + DefBonus + Absorb + ArmorIgnore + Move + Fl + Range;
-            return Total;
+            return Total ?? 0;
         }
 
         public int? RangeWeapFromID(int? id)
@@ -89,7 +90,7 @@ namespace Army_Constractor.Models
             int? AttBonus = db.RangeWeapons.Single(p => p.RangeWeaponID == id).RanWeapAttBonus * 6;
             
             int? Total = Range + ArmorIgnore + AttBonus;
-            return Total;
+            return Total ?? 0;
         }
     }
     

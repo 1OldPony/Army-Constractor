@@ -8,40 +8,36 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="mymenu">
-        <ul>
-            <li>@Html.ActionLink("Юниты", "Index", "Units", null, new { @class = "actionlinks" })</li>
-            <li>@Html.ActionLink("Оружие ближнего боя", "Index", "MeleeWeapons", null, new { @class = "actionlinks" })</li>
-            <li>@Html.ActionLink("Оружие дальнего боя", "Index", "RangeWeapons", null, new { @class = "actionlinks" })</li>
-            <li>@Html.ActionLink("Броня", "Index", "Armors", null, new { @class = "actionlinks" })</li>
-            <li>@Html.ActionLink("Ездовые животные", "Index", "Mounts", null, new { @class = "actionlinks" })</li>
-            <li>@Html.ActionLink("Щиты", "Index", "Shields", null, new { @class = "actionlinks" })</li>
-            <li>@Html.ActionLink("Типы рекрутов", "Index", "RecrutTypes", null, new { @class = "actionlinks" })</li>
-        </ul>
-        <div>
-            @{
-                List<SelectListItem> list = new List<SelectListItem>();
-
-                list.Add(new SelectListItem() { Text = "Юниты" });
-                list.Add(new SelectListItem() { Text = "Оружие ближнего боя" });
-                list.Add(new SelectListItem() { Text = "Оружие дальнего боя" });
-                list.Add(new SelectListItem() { Text = "Броня" });
-                list.Add(new SelectListItem() { Text = "Типы рекрутов" });
-                list.Add(new SelectListItem() { Text = "Ездовые животные" });
-                list.Add(new SelectListItem() { Text = "Щиты" });
-
-            }
-            @using (Html.BeginForm())
-            {
-                <p>
-                    @Html.TextBox("SearchString")
-                    @Html.DropDownList("Category", list)
-                    <input class="submit-search-button" type="submit" value="Поиск" formaction="@Url.Action("Search","ArmyConstractor")" />
-                </p>
-            }
-        </div>
-    </div>
+    <table class="mymenu" border="0">
+        <tr>
+            <td><table class="innerTable" border="0">
+                    <tr>
+                        <td>@Html.ActionLink("Юниты", "Index", "Units", null, new { @class = "actionlinks" })</td>
+                        <td>@Html.ActionLink("Оружие ближнего боя", "Index", "MeleeWeapons", null, new { @class = "actionlinks" })</td>
+                        <td>@Html.ActionLink("Оружие дальнего боя", "Index", "RangeWeapons", null, new { @class = "actionlinks" })</td>
+                        <td>@Html.ActionLink("Доспехи", "Index", "Armors", null, new { @class = "actionlinks" })</td>
+                        <td>@Html.ActionLink("Ездовые животные", "Index", "Mounts", null, new { @class = "actionlinks" })</td>
+                        <td>@Html.ActionLink("Щиты", "Index", "Shields", null, new { @class = "actionlinks" })</td>
+                        <td>@Html.ActionLink("Типы рекрутов", "Index", "RecrutTypes", null, new { @class = "actionlinks" })</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            @using (Html.BeginForm())
+                            {
+                                <p>
+                                    @Html.TextBox("SearchString")
+                                    <input type="submit" value="Поиск" formaction="@Url.Action("Search","ArmyConstractor")" />
+                                </p>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div1>
         @RenderBody()
+    </div1>
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)

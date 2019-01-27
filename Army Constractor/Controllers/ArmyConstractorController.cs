@@ -14,6 +14,7 @@ namespace Army_Constractor.Controllers
 
         public ActionResult Search(FormCollection values)
         {
+            
             var UnitInfo = db.Units.Include("Armor").Include("RangeWeapon").Include("RecrutType").Include("Shield").Include("MeleeWeapon").Include("Mount").ToList();
             var MeleeWeaponInfo = db.MeleeWeapons.ToList();
             var RangeWeaponInfo = db.RangeWeapons.ToList();

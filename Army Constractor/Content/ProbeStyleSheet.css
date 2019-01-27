@@ -1,15 +1,19 @@
 ﻿body {
+    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
+}
+div1 {
+    /*position: relative;*/
+    top: 20px;
 }
 .mymenu {
-    max-height: 340px;
-    padding-right: 15px;
-    padding-left: 15px;
-    overflow-x: visible;
-    border-top: 1px solid transparent;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    -webkit-overflow-scrolling: touch;
-    /*background: #fbf0a3;
-    float:left;
+	/*position: absolute;*/
+	top: 0px;
+	height: 50px;
+	width: 100%;
+	background: #fbf0a3;
+	/*min-width: 500px;*/
+	/*max-width: 2000px;*/
+	/*float:left;
     width: 30%;
     max-width: 400px;
     min-width: 200px;
@@ -18,21 +22,26 @@
     font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
     font-size: 14pt;*/
 }
+.serchres {
+    display: inline-block;
+}
+.innerTable {
+    width: 100%;
+    text-align:center;
+}
 .actionlinks {
-    color: black;
-    text-decoration: none; 
-    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
     font-size: 14pt;
+    color: black;
+    text-decoration: none;
 }
 .tableElement {
     text-align: center;
     float: left;
     width: 50%;
-    min-width: 450px;
-    max-width: 900px;
+    min-width: 500px;
+    max-width: 1000px;
     border: 1px;
     font-size: 14pt;
-    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .tableCaracteristic {
     text-align: center;
@@ -41,7 +50,6 @@
     max-width: 128px;
     border: 1px;
     font-size: 14pt;
-    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .detailtables {
     text-align: center;
@@ -51,7 +59,6 @@
     max-width: 800px;
     border: 1px;
     font-size: 14pt;
-    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .editTables {
     text-align: center;
@@ -59,7 +66,6 @@
     width: 350px;
     border: 1px;
     font-size: 14pt;
-    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .textArea {
     width: 30%;
@@ -94,12 +100,10 @@
     text-align: left;
     width: 200px;
     font-size: 14pt;
-    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .secondColumn {
     width: 150px;
     font-size: 14pt;
-    font-family: 'Monotype Corsiva', 'Times New Roman', Times, serif;
 }
 .arrowButton {
     width: 4%;

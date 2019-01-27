@@ -23,7 +23,7 @@
         <tr>
             <td colspan="2">
                 @Html.ActionLink("Редактировать", "Edit", new { id = Model.ShieldID }) |
-                @Html.ActionLink("Назад", "Index") |
+                @Html.ActionLink("Назад", "Index", null, new { @class = "actionlinks" }) |
                 @Html.ActionLink("Удалить", "Delete", new { id = Model.ShieldID })
             </td>
         </tr>

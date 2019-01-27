@@ -7,7 +7,7 @@
 <h2>Оружие ближнего боя</h2>
 
 <p>
-    @Html.ActionLink("Создать новое", "Create")
+    @Html.ActionLink("Создать новое", "Create", null, new { @class = "actionlinks" })
 </p>
 
 
@@ -45,9 +45,9 @@
         </tr>
         <tr>
             <td colspan="4">
-                @Html.ActionLink("Редактировать", "Edit", new { id = item.MeleeWeaponID }) |
-                @Html.ActionLink("Подробнее", "Details", new { id = item.MeleeWeaponID }) |
-                @Html.ActionLink("Удалить", "Delete", new { id = item.MeleeWeaponID })
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.MeleeWeaponID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.MeleeWeaponID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.MeleeWeaponID }, new { @class = "actionlinks" })
             </td>
         </tr>
     </table>

@@ -7,7 +7,7 @@
 <h2>Доспехи</h2>
 
 <p>
-    @Html.ActionLink("Создать новый", "Create")
+    @Html.ActionLink("Создать новый", "Create", null, new { @class = "actionlinks" })
 </p>
 @foreach (var item in Model)
 {
@@ -35,9 +35,9 @@
         </tr>
         <tr>
             <td colspan="2">
-                @Html.ActionLink("Редактировать", "Edit", new { id = item.ArmorID }) |
-                @Html.ActionLink("Подробнее", "Details", new { id = item.ArmorID }) |
-                @Html.ActionLink("Удалить", "Delete", new { id = item.ArmorID })
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ArmorID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.ArmorID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ArmorID }, new { @class = "actionlinks" })
             </td>
         </tr>
     </table>

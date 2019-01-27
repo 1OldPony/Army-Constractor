@@ -8,12 +8,12 @@ namespace Army_Constractor.ViewModels
 {
     public class SearchResults
     {
-        public virtual List <Armor> Armors { get; set; }
-        public virtual List<RecrutType> RecrutTypes { get; set; }
-        public virtual List<MeleeWeapon> MeleeWeapons { get; set; }
-        public virtual List<Mount> Mounts { get; set; }
-        public virtual List<RangeWeapon> RangeWeapons { get; set; }
-        public virtual List<Shield> Shields { get; set; }
-        public virtual List<Unit> Units { get; set; }
+        public List<Armor> Armors { get; set; }
+        public List<RecrutType> RecrutTypes { get; set; }
+        public List<MeleeWeapon> MeleeWeapons { get; set; }
+        public List<Mount> Mounts { get; set; }
+        public List<RangeWeapon> RangeWeapons { get; set; }
+        public List<Shield> Shields { get; set; }
+        public List<Unit> Units { get; set; }
     }
 }

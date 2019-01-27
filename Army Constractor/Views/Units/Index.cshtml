@@ -99,7 +99,7 @@
                 @Html.DisplayFor(modelitem => item.NumberOfCombatants)
             </td>
             <td>
-                @Html.ActionLink(@item.Mount.MountName, "Details", "Mounts", new { id = item.MountID })
+                @Html.ActionLink(@item.Mount.MountName, "Details", "Mounts", new { id = item.MountID }, new { @class = "actionlinks" })
                 
             </td>
         </tr>
@@ -108,9 +108,9 @@
         </tr>
         <tr>
             <td colspan="12">
-                @Html.ActionLink("Редактировать", "Edit", new { id = item.UnitID }) |
-                @Html.ActionLink("Подробнее", "Details", new { id = item.UnitID }) |
-                @Html.ActionLink("Удалить", "Delete", new { id = item.UnitID })
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.UnitID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.UnitID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.UnitID }, new { @class = "actionlinks" })
             </td>
         </tr>
     </table>

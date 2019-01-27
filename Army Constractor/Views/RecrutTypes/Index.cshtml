@@ -7,7 +7,7 @@
 <h2>Рекруты</h2>
 
 <p>
-    @Html.ActionLink("Создать нового", "Create")
+    @Html.ActionLink("Создать нового", "Create", null, new { @class = "actionlinks" })
 </p>
 
 @foreach (var item in Model)
@@ -61,9 +61,9 @@
         </tr>
         <tr>
             <td colspan="6">
-                @Html.ActionLink("Редактировать", "Edit", new { id = item.RecrutTypeID }) |
-                @Html.ActionLink("Подробнее", "Details", new { id = item.RecrutTypeID }) |
-                @Html.ActionLink("Удалить", "Delete", new { id = item.RecrutTypeID })
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.RecrutTypeID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.RecrutTypeID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.RecrutTypeID }, new { @class = "actionlinks" })
             </td>
         </tr>
     </table>

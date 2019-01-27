@@ -63,12 +63,14 @@ namespace Army_Constractor.Models
         public virtual Mount Mount { get; set; }
         public virtual RangeWeapon RangeWeapon { get; set; }
         public virtual Shield Shield { get; set; }
+
+        
     }
 
     public partial class Unit
     {
         PricesCalc PC = new PricesCalc();
-        public int? UnitPrice()
+        private int? UnitPrice()
         {
 
             int? UPrice = (PC.ShieldPriceFromID(ShieldID)+ PC.ArmorPriceFromID(ArmorID) + PC.MeleeWeapPriceFromID(MeleeWeaponID) 

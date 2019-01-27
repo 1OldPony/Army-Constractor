@@ -7,7 +7,7 @@
 <h2>Оружие дальнего боя</h2>
 
 <p>
-    @Html.ActionLink("создать новый", "Create")
+    @Html.ActionLink("Cоздать новое", "Create", null, new { @class = "actionlinks" })
 </p>
 
 @foreach (var item in Model)
@@ -20,7 +20,7 @@
             <td>Брб</td>
             <td>Атк</td>
             <td>Рад</td>
-            <td rowspan="4" style="font-size:xx-large">
+            <td rowspan="3" style="font-size:xx-large">
                 @item.Price
             </td>
         </tr>
@@ -39,10 +39,10 @@
             <td align="right" colspan="3" style="font-size:large">Стоимость:</td>
         </tr>
         <tr>
-            <td colspan="6">
-                @Html.ActionLink("Редактировать", "Edit", new { id = item.RangeWeaponID }) |
-                @Html.ActionLink("Подробнее", "Details", new { id = item.RangeWeaponID }) |
-                @Html.ActionLink("Удалить", "Delete", new { id = item.RangeWeaponID })
+            <td colspan="3">
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.RangeWeaponID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.RangeWeaponID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.RangeWeaponID }, new { @class = "actionlinks" })
             </td>
         </tr>
     </table>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Army_Constractor.ViewModels.SearchResults>
+﻿@model Army_Constractor.ViewModels.SearchResults
 
 @{
     ViewBag.Title = "Search";
@@ -6,4 +6,406 @@
 
 <h2>Результаты поиска</h2>
 
-@Model.
+    <h3>Юниты</h3>
+    <hr />
+
+<div class="serchres">
+    @foreach (var item in @Model.Units)
+    {
+        <table class="tableElement" border="1">
+            <tr>
+                <td colspan="16" style="font-size:x-large">@Html.DisplayFor(modelItem => item.UnitName)</td>
+            </tr>
+            <tr>
+                <td colspan="3">Стрельба</td>
+                <td rowspan="2">Пгл</td>
+                <td rowspan="2">Брб</td>
+                <td rowspan="2">Атк</td>
+                <td rowspan="2">Рад</td>
+                <td rowspan="2">Защ</td>
+                <td rowspan="2">Хрб</td>
+                <td rowspan="2">Двж</td>
+                <td rowspan="2">КлБ</td>
+                <td rowspan="2">Ежв</td>
+                <td rowspan="6" style="font-size:xx-large">
+                    @item.Price
+                </td>
+            </tr>
+            <tr>
+                <td>Атк</td>
+                <td>Рад</td>
+                <td>Брб</td>
+            </tr>
+            <tr>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.RangeWeapon.RanWeapAttBonus)
+                        + @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeAttBonus))
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.RangeWeapon.RanWeapRange))
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.RangeWeapon.RanWeapArmorIgnore))
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeAbsorb)
+                        + @Html.DisplayFor(modelitem => item.Armor.ArmorAbsorb))
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeArmorIgnore)
+                        + @Html.DisplayFor(modelitem => item.MeleeWeapon.MelWeapArmorIgnore) + "/")
+                    document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeArmorIgnore)
+                        + @Html.DisplayFor(modelitem => item.SecondWeapon.MelWeapArmorIgnore))
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeAttBonus)
+                        + @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeRank));
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.MeleeWeapon.Range) + "/"
+                        + @Html.DisplayFor(modelitem => item.SecondWeapon.Range));
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeDefBonus)
+                        + @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeRank)
+                        + @Html.DisplayFor(modelitem => item.Shield.ShieldDefBonus));
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+                    document.write(@Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeBraveryBonus)
+                        + @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeRank));
+                    </script>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.RecrutType.RecrutTypeMove)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.NumberOfCombatants)
+                </td>
+                <td>
+                    @Html.ActionLink(@item.Mount.MountName, "Details", "Mounts", new { id = item.MountID }, new { @class = "actionlinks" })
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="12" style="font-size:large">Стоимость:</td>
+            </tr>
+            <tr>
+                <td colspan="12">
+                    @Html.ActionLink("Редактировать", "Edit", "Units", new { id = item.UnitID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Подробнее", "Details", "Units", new { id = item.UnitID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Удалить", "Delete", "Units", new { id = item.UnitID }, new { @class = "actionlinks" })
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<br />
+
+<h3>Оружие ближнего боя</h3>
+<hr />
+<div class="serchres">
+    @foreach (var item in @Model.MeleeWeapons)
+    {
+        <table class="tableElement" border="1">
+            <tr>
+                <td colspan="5" style="font-size:x-large">@item.MelWeapName</td>
+            </tr>
+            <tr>
+                <td>Брб</td>
+                <td>Рад</td>
+                <td>Двр</td>
+                <td>Пар</td>
+                <td rowspan="8" style="font-size:xx-large" id="price">
+                    @item.Price
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @item.MelWeapArmorIgnore
+                </td>
+                <td>
+                    @item.Range
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => item.TwoHanded)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => item.Pare)
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="4" style="font-size:large">Стоимость:</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    @Html.ActionLink("Редактировать", "Edit", "MeleeWeapons", new { id = item.MeleeWeaponID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Подробнее", "Details", "MeleeWeapons", new { id = item.MeleeWeaponID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Удалить", "Delete", "MeleeWeapons", new { id = item.MeleeWeaponID }, new { @class = "actionlinks" })
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<br />
+
+<h3>Оружие дальнего боя</h3>
+<hr />
+<div class="serchres">
+    @foreach (var item in @Model.RangeWeapons)
+    {
+        <table class="tableElement" border="1">
+            <tr>
+                <td colspan="4" style="font-size:x-large">@item.RanWeapName</td>
+            </tr>
+            <tr>
+                <td>Брб</td>
+                <td>Атк</td>
+                <td>Рад</td>
+                <td rowspan="3" style="font-size:xx-large">
+                    @item.Price
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @item.RanWeapArmorIgnore
+                </td>
+                <td>
+                    @item.RanWeapAttBonus
+                </td>
+                <td>
+                    @item.RanWeapRange
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="3" style="font-size:large">Стоимость:</td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    @Html.ActionLink("Редактировать", "Edit", "RangeWeapons", new { id = item.RangeWeaponID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Подробнее", "Details", "RangeWeapons", new { id = item.RangeWeaponID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Удалить", "Delete", "RangeWeapons", new { id = item.RangeWeaponID }, new { @class = "actionlinks" })
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<br />
+
+<h3>Доспехи</h3>
+<hr />
+<div class="serchres">
+    @foreach (var item in @Model.Armors)
+    {
+        <table class="tableElement" border="1">
+            <tr>
+                <td colspan="3" style="font-size:x-large">@item.ArmorName</td>
+            </tr>
+            <tr>
+                <td>Пгл</td>
+                <td>Снж</td>
+                <td rowspan="8" style="font-size:xx-large" id="price">
+                    @item.Price
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @item.ArmorAbsorb
+                </td>
+                <td>
+                    @item.ArmorMoveDecrease
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="2" style="font-size:large">Стоимость:</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.ActionLink("Редактировать", "Edit", "Armors", new { id = item.ArmorID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Подробнее", "Details", "Armors", new { id = item.ArmorID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Удалить", "Delete", "Armors", new { id = item.ArmorID }, new { @class = "actionlinks" })
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<br />
+
+<h3>Ездовые животные</h3>
+<hr />
+<div class="serchres">
+    @foreach (var item in @Model.Mounts)
+    {
+        <table class="tableElement" border="1">
+            <tr>
+                <td colspan="8" style="font-size:x-large">@item.MountName</td>
+            </tr>
+            <tr>
+                <td>Пгл</td>
+                <td>Брб</td>
+                <td>Атк</td>
+                <td>Защ</td>
+                <td>Хрб</td>
+                <td>Двж</td>
+                <td>Плт</td>
+                <td rowspan="8" style="font-size:xx-large" id="price">
+                    @item.Price
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @item.MountAbsorb
+                </td>
+                <td>
+                    @item.MountArmorIgnore
+                </td>
+                <td>
+                    <script type="text/javascript">
+    document.write(@item.MountRank
+        + @item.MountAttBonus);
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+    document.write(@item.MountDefBonus
+        + @item.MountRank);
+                    </script>
+                </td>
+                <td>
+                    @item.MountRange
+                </td>
+                <td>
+                    @item.MountMove
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => item.Flying)
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="7" style="font-size:large">Стоимость:</td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    @Html.ActionLink("Редактировать", "Edit", "Mounts", new { id = item.MountID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Подробнее", "Details", "Mounts", new { id = item.MountID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Удалить", "Delete", "Mounts", new { id = item.MountID }, new { @class = "actionlinks" })
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<br />
+
+<h3>Щиты</h3>
+<hr />
+<div class="serchres">
+    @foreach (var item in @Model.Shields)
+    {
+        <table class="tableElement" border="1">
+            <tr>
+                <td colspan="2" style="font-size:x-large">@item.ShieldName</td>
+            </tr>
+            <tr>
+                <td>Защ</td>
+                <td rowspan="3" style="font-size:xx-large">
+                    @item.Price
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @item.ShieldDefBonus
+                </td>
+            </tr>
+            <tr>
+                <td align="right" style="font-size:large">Стоимость:</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.ActionLink("Редактировать", "Edit", "Shields", new { id = item.ShieldID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Подробнее", "Details", "Shields", new { id = item.ShieldID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Удалить", "Delete", "Shields", new { id = item.ShieldID }, new { @class = "actionlinks" })
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<br />
+
+<h3>Типы рекрутов</h3>
+<hr />
+<div class="serchres">
+    @foreach (var item in @Model.RecrutTypes)
+    {
+        <table class="tableElement" border="1">
+            <tr>
+                <td colspan="7" style="font-size:x-large">@item.RecrutTypeName</td>
+            </tr>
+            <tr>
+                <td>Пгл</td>
+                <td>Брб</td>
+                <td>Атк</td>
+                <td>Защ</td>
+                <td>Хрб</td>
+                <td>Двж</td>
+                <td rowspan="8" style="font-size:xx-large" id="price">
+                    @item.Price
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @item.RecrutTypeArmorIgnore
+                </td>
+                <td>
+                    @item.RecrutTypeAbsorb
+                </td>
+                <td>
+                    <script type="text/javascript">
+    document.write(@item.RecrutTypeAttBonus
+        + @item.RecrutTypeRank);
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+    document.write(@item.RecrutTypeDefBonus
+        + @item.RecrutTypeRank);
+                    </script>
+                </td>
+                <td>
+                    <script type="text/javascript">
+    document.write(@item.RecrutTypeBraveryBonus
+        + @item.RecrutTypeRank);
+                    </script>
+                </td>
+                <td>
+                    @item.RecrutTypeMove
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="6" style="font-size:large">Стоимость:</td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    @Html.ActionLink("Редактировать", "Edit", "RecrutTypes", new { id = item.RecrutTypeID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Подробнее", "Details", "RecrutTypes", new { id = item.RecrutTypeID }, new { @class = "actionlinks" }) |
+                    @Html.ActionLink("Удалить", "Delete", "RecrutTypes", new { id = item.RecrutTypeID }, new { @class = "actionlinks" })
+                </td>
+            </tr>
+        </table>
+    }
+</div>

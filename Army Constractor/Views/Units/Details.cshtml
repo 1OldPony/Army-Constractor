@@ -45,8 +45,8 @@
     <tr><td colspan="2">@{Html.RenderPartial("Mount");}</td></tr>
     <tr>
         <td colspan="2">
-            @Html.ActionLink("Редактировать", "Edit", new { id = Model.UnitID }) |
-            @Html.ActionLink("Назад", "Index")
+            @Html.ActionLink("Редактировать", "Edit", new { id = Model.UnitID }, new { @class = "actionlinks" }) |
+            @Html.ActionLink("Назад", "Index", null, new { @class = "actionlinks" })
         </td>
     </tr>
     <tr>

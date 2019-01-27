@@ -113,8 +113,8 @@
                 </div>
             </td>
             <td>
-                @Html.ActionLink("Подробнее", "Details", new { id = Model.UnitID }) |
-                @Html.ActionLink("Назад", "Index")
+                @Html.ActionLink("Подробнее", "Details", new { id = Model.UnitID }, new { @class = "actionlinks" }) |
+                @Html.ActionLink("Назад", "Index", null, new { @class = "actionlinks" })
             </td>
         </tr>
     </table>

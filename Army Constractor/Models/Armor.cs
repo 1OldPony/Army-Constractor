@@ -34,7 +34,7 @@ namespace Army_Constractor.Models
         {
             get => ArmorPrice();
             set { }
-        }
+        }        
     }
 
     public partial class Armor
