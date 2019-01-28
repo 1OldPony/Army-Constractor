@@ -50,7 +50,6 @@ namespace Army_Constractor.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (armor.ArmorMoveDecrease == null)
                 db.Armors.Add(armor);
                 db.SaveChanges();
                 return RedirectToAction("Index");

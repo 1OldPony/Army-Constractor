@@ -25,7 +25,7 @@ namespace Army_Constractor.Models
         public string Description { get; set; }
 
         [NotMapped]
-        public int Price
+        public int? Price
         {
             get => ShieldPrice();
             set {}
@@ -35,9 +35,9 @@ namespace Army_Constractor.Models
     public partial class Shield
     {
 
-        public int ShieldPrice()
+        public int? ShieldPrice()
         {
-            int ShPrice = ShieldDefBonus * 5;
+            int? ShPrice = ShieldDefBonus * 5;
             return ShPrice;
         }
     }
