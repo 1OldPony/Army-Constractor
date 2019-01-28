@@ -26,14 +26,14 @@ namespace Army_Constractor.Models
 
         [Display(Name = "Бронебойность")]
         [Range(0, 5)]
-        public int? RanWeapArmorIgnore { get; set; }
+        public int RanWeapArmorIgnore { get; set; }
 
         [Display(Name = "Описание")]
         [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
 
         [NotMapped]
-        public int? Price
+        public int Price
         {
             get => RangeWeaponTypePrice();
             set { }
@@ -42,9 +42,9 @@ namespace Army_Constractor.Models
 
     public partial class RangeWeapon
     {
-        public int? RangeWeaponTypePrice()
+        public int RangeWeaponTypePrice()
         {
-            int? RWPrice = (RanWeapAttBonus * 6) + (RanWeapRange * 3)
+            int RWPrice = (RanWeapAttBonus * 6) + (RanWeapRange * 3)
                 + (RanWeapArmorIgnore * 6);
             return RWPrice;
         }

@@ -27,7 +27,7 @@
                 <td class="firstColumn">@Html.LabelFor(model => model.ShieldDefBonus)</td>
                 <td><input type="button" class="arrowButton" value="-" onclick="shieldPriceCalcMinus()"></td>
                 <td>
-                    @Html.EditorFor(model => model.ShieldDefBonus, new { htmlAttributes = new { @class = "inputsSmall" } })
+                    @Html.EditorFor(model => model.ShieldDefBonus, new { htmlAttributes = new { @class = "inputsSmall", @Value = 1 } })
                     @Html.ValidationMessageFor(model => model.ShieldDefBonus, "", new { @class = "text-danger" })
                 </td>
                 <td><input type="button" class="arrowButton" value="+" onclick="shieldPriceCalcPlus()"></td>

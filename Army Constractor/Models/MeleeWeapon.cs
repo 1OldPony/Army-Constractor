@@ -36,7 +36,7 @@ namespace Army_Constractor.Models
         public string Description { get; set; }
 
         [NotMapped]
-        public int? Price
+        public int Price
         {
             get => MeleeWeaponPrice();
             set { }
@@ -45,7 +45,7 @@ namespace Army_Constractor.Models
 
     public partial class MeleeWeapon
     {
-        public int? MeleeWeaponPrice()
+        public int MeleeWeaponPrice()
         {
             int TH = 0;
             int Pr = 0;
@@ -59,7 +59,7 @@ namespace Army_Constractor.Models
                 Pr = 20;
             }
 
-            int? MeleeWeapPrice = (Range * 20) + (MelWeapArmorIgnore * 5) + Pr - TH;
+            int MeleeWeapPrice = (Range * 20) + (MelWeapArmorIgnore * 5) + Pr - TH;
             return MeleeWeapPrice;
         }
     }

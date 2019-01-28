@@ -27,11 +27,11 @@ namespace Army_Constractor.Models
 
         [Display(Name = "Бронебойность")]
         [Range(0, 5)]
-        public int? MountArmorIgnore { get; set; }
+        public int MountArmorIgnore { get; set; }
 
         [Display(Name = "Поглощение урона")]
         [Range(0, 5)]
-        public int? MountAbsorb { get; set; }
+        public int MountAbsorb { get; set; }
 
         [Required(ErrorMessage = "Эта характеристика необходима")]
         [Range(1, 10)]
@@ -56,7 +56,7 @@ namespace Army_Constractor.Models
         public string Description { get; set; }
 
         [NotMapped]
-        public int? Price
+        public int Price
         {
             get => MountPrice();
             set { }
@@ -65,14 +65,14 @@ namespace Army_Constractor.Models
 
     public partial class Mount
     {
-        public int? MountPrice()
+        public int MountPrice()
         {
             int Fl = 0;
             if (Flying==true)
             {
                 Fl = 20;
             }
-            int? MountPrice = (MountRange * 20) + (MountRank * 10)
+            int MountPrice = (MountRange * 20) + (MountRank * 10)
                 + (MountArmorIgnore * 5) + (MountAbsorb * 5) + (MountDefBonus * 5) + (MountAttBonus * 5) + (MountMove*2) + Fl;
             return MountPrice;
         }

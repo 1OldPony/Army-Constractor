@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201807262253458_WholePrices!.Designer.cs">
       <DependentUpon>201807262253458_WholePrices!.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901282039228_De-nullable.cs" />
+    <Compile Include="Migrations\201901282039228_De-nullable.Designer.cs">
+      <DependentUpon>201901282039228_De-nullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\ArmyConstractorDB.cs" />
@@ -363,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807262253458_WholePrices!.resx">
       <DependentUpon>201807262253458_WholePrices!.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901282039228_De-nullable.resx">
+      <DependentUpon>201901282039228_De-nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

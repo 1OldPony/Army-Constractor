@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MountRange, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MountRange, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MountRange, new { htmlAttributes = new { @class = "form-control", @Value = 0 } })
                 @Html.ValidationMessageFor(model => model.MountRange, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MountRank, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MountRank, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MountRank, new { htmlAttributes = new { @class = "form-control", @Value = 1 } })
                 @Html.ValidationMessageFor(model => model.MountRank, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MountArmorIgnore, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MountArmorIgnore, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MountArmorIgnore, new { htmlAttributes = new { @class = "form-control", @Value = 0 } })
                 @Html.ValidationMessageFor(model => model.MountArmorIgnore, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MountAbsorb, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MountAbsorb, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MountAbsorb, new { htmlAttributes = new { @class = "form-control", @Value = 0 } })
                 @Html.ValidationMessageFor(model => model.MountAbsorb, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -58,7 +58,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MountDefBonus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MountDefBonus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MountDefBonus, new { htmlAttributes = new { @class = "form-control", @Value = 0 } })
                 @Html.ValidationMessageFor(model => model.MountDefBonus, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MountAttBonus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MountAttBonus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MountAttBonus, new { htmlAttributes = new { @class = "form-control", @Value = 0 } })
                 @Html.ValidationMessageFor(model => model.MountAttBonus, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -74,7 +74,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MountMove, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MountMove, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MountMove, new { htmlAttributes = new { @class = "form-control", @Value = 4 } })
                 @Html.ValidationMessageFor(model => model.MountMove, "", new { @class = "text-danger" })
             </div>
         </div>
