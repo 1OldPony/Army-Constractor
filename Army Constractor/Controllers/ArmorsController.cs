@@ -15,9 +15,26 @@ namespace Army_Constractor.Controllers
         private ArmyConstractorDB db = new ArmyConstractorDB();
 
         // GET: Armors
-        public ActionResult Index()
+        public ActionResult Index(int? sortOption)
         {
-            return View(db.Armors.ToList());
+            var armors = db.Armors.AsQueryable();
+
+            if (sortOption == null)
+                return View(armors.ToList());
+            else if (sortOption == 1)
+            {
+                armors = armors.OrderBy(u => u.ArmorName);
+                return View(armors.ToList());
+            }
+            else
+            {
+                List<Armor> OrderedArmor = armors.ToList();
+                OrderedArmor.Sort(delegate (Armor x, Armor y)
+                {
+                    return x.Price.CompareTo(y.Price);
+                });
+                return View(OrderedArmor);
+            }
         }
 
         // GET: Armors/Details/5

@@ -15,9 +15,26 @@ namespace Army_Constractor.Controllers
         private ArmyConstractorDB db = new ArmyConstractorDB();
 
         // GET: RangeWeapons
-        public ActionResult Index()
+        public ActionResult Index(int? sortOption)
         {
-            return View(db.RangeWeapons.ToList());
+            var rangedWeapons = db.RangeWeapons.AsQueryable();
+
+            if (sortOption == null)
+                return View(rangedWeapons.ToList());
+            else if (sortOption == 1)
+            {
+                rangedWeapons = rangedWeapons.OrderBy(u => u.RanWeapName);
+                return View(rangedWeapons.ToList());
+            }
+            else
+            {
+                List<RangeWeapon> OrderedMelWeap = rangedWeapons.ToList();
+                OrderedMelWeap.Sort(delegate (RangeWeapon x, RangeWeapon y)
+                {
+                    return x.Price.CompareTo(y.Price);
+                });
+                return View(OrderedMelWeap);
+            }
         }
 
         // GET: RangeWeapons/Details/5

@@ -19,7 +19,8 @@ namespace Army_Constractor.Controllers
         {
             var units = db.Units.Include(u => u.Armor).Include(u => u.Mount).Include(u => u.RangeWeapon).Include(u => u.RecrutType).Include(u => u.Shield).Include(u => u.MeleeWeapon);
 
-            if (sortOption == null) return View(units.ToList());
+            if (sortOption == null)
+                return View(units.ToList());
             else if (sortOption == 1)
             {
                 units = units.OrderBy(u => u.UnitName);

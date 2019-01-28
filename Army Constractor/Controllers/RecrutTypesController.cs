@@ -15,9 +15,26 @@ namespace Army_Constractor.Controllers
         private ArmyConstractorDB db = new ArmyConstractorDB();
 
         // GET: RecrutTypes
-        public ActionResult Index()
+        public ActionResult Index(int? sortOption)
         {
-            return View(db.RecrutTypes.ToList());
+            var recrutTypes = db.RecrutTypes.AsQueryable();
+
+            if (sortOption == null)
+                return View(recrutTypes.ToList());
+            else if (sortOption == 1)
+            {
+                recrutTypes = recrutTypes.OrderBy(u => u.RecrutTypeName);
+                return View(recrutTypes.ToList());
+            }
+            else
+            {
+                List<RecrutType> OrderedMelWeap = recrutTypes.ToList();
+                OrderedMelWeap.Sort(delegate (RecrutType x, RecrutType y)
+                {
+                    return x.Price.CompareTo(y.Price);
+                });
+                return View(OrderedMelWeap);
+            }
         }
 
         // GET: RecrutTypes/Details/5

@@ -7,6 +7,12 @@
 <h2>Доспехи</h2>
 
 <p>
+	Отсортировать по: @Html.ActionLink("Дате", "Index", null, new { @class = "actionlinks" })
+	| @Html.ActionLink("Названию", "Index", new { sortOption = 1 }, new { @class = "actionlinks" })
+	| @Html.ActionLink("Цене", "Index", new { sortOption = 2 }, new { @class = "actionlinks" })
+</p>
+
+<p>
     @Html.ActionLink("Создать новый", "Create", null, new { @class = "actionlinks" })
 </p>
 @foreach (var item in Model)
