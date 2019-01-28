@@ -23,14 +23,14 @@ namespace Army_Constractor.Models
 
         [Range(0, 5)]
         [Display(Name = "Снижение скорости")]
-        public int? ArmorMoveDecrease { get; set; }
+        public int ArmorMoveDecrease { get; set; }
 
         [Display(Name = "Описание")]
         [StringLength(500, ErrorMessage = "Длина строки должна быть меньше 500 символов")]
         public string Description { get; set; }
 
         [NotMapped]
-        public int? Price
+        public int Price
         {
             get => ArmorPrice();
             set { }
@@ -39,9 +39,9 @@ namespace Army_Constractor.Models
 
     public partial class Armor
     {
-        public int? ArmorPrice()
+        public int ArmorPrice()
         {
-            int? ArmorPr = (ArmorAbsorb * 5) - (ArmorMoveDecrease * 3);
+            int ArmorPr = (ArmorAbsorb * 5) - (ArmorMoveDecrease * 3);
             return ArmorPr;
         }
     }

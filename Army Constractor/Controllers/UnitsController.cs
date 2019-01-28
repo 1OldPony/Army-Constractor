@@ -28,10 +28,10 @@ namespace Army_Constractor.Controllers
                     List<Unit> orderedUnits = units.ToList();
                     orderedUnits.Sort(delegate(Unit x, Unit y)
                     {
-                        if (x.Price == null && y.Price == null) return 0;
-                        else if (x.Price == null) return -1;
-                        else if (y.Price == null) return 1;
-                        else return x.Price.CompareTo(y.Price);
+                        //if (x.Price == null && y.Price == null) return 0;
+                        //else if (x.Price == null) return -1;
+                        //else if (y.Price == null) return 1;
+                        return x.Price.CompareTo(y.Price);
                     });
                     return View(orderedUnits);
                 }

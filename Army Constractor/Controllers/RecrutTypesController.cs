@@ -50,6 +50,12 @@ namespace Army_Constractor.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (recrutType.RecrutTypeAbsorb == null) recrutType.RecrutTypeAbsorb = 0;
+                else if (recrutType.RecrutTypeArmorIgnore == null) recrutType.RecrutTypeArmorIgnore = 0;
+                else if (recrutType.RecrutTypeAttBonus == null) recrutType.RecrutTypeAttBonus = 0;
+                else if (recrutType.RecrutTypeBraveryBonus == null) recrutType.RecrutTypeBraveryBonus = 0;
+                else if (recrutType.RecrutTypeDefBonus == null) recrutType.RecrutTypeDefBonus = 0;
+
                 db.RecrutTypes.Add(recrutType);
                 db.SaveChanges();
                 return RedirectToAction("Index");
