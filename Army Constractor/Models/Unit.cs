@@ -50,7 +50,7 @@ namespace Army_Constractor.Models
         
         [NotMapped]
         [Display(Name = "Стоимость")]
-        public int Price
+        public int? Price
         {
             get => UnitPrice();
             set { }
@@ -70,10 +70,10 @@ namespace Army_Constractor.Models
     public partial class Unit
     {
         PricesCalc PC = new PricesCalc();
-        private int UnitPrice()
+        private int? UnitPrice()
         {
 
-            int UPrice = (PC.ShieldPriceFromID(ShieldID)+ PC.ArmorPriceFromID(ArmorID) + PC.MeleeWeapPriceFromID(MeleeWeaponID) 
+            int? UPrice = (PC.ShieldPriceFromID(ShieldID)+ PC.ArmorPriceFromID(ArmorID) + PC.MeleeWeapPriceFromID(MeleeWeaponID) 
                 + PC.MeleeWeapPriceFromID(SecondWeaponID) + PC.MountPriceFromID(MountID) + PC.RangeWeapFromID(RangeWeaponID) 
                 + PC.RecrutTypePriceFromID(RecrutTypeID))*NumberOfCombatants;
             return UPrice;
