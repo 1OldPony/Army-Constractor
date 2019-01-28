@@ -15,10 +15,34 @@ namespace Army_Constractor.Controllers
         private ArmyConstractorDB db = new ArmyConstractorDB();
 
         // GET: Units
-        public ActionResult Index()
+        public ActionResult Index(int? sortOrder)
         {
             var units = db.Units.Include(u => u.Armor).Include(u => u.Mount).Include(u => u.RangeWeapon).Include(u => u.RecrutType).Include(u => u.Shield).Include(u => u.MeleeWeapon);
-            return View(units.ToList());
+
+            if (sortOrder == null)
+                return View(units.ToList());
+            else
+            {
+                if (sortOrder == 1)
+                {
+                    List<Unit> orderedUnits = units.ToList();
+                    orderedUnits.Sort(delegate(Unit x, Unit y)
+                    {
+                        if (x.Price == null && y.Price == null) return 0;
+                        else if (x.Price == null) return -1;
+                        else if (y.Price == null) return 1;
+                        else return x.Price.CompareTo(y.Price);
+                    });
+                    return View(orderedUnits);
+                }
+                    else
+                {
+                    units = units.OrderBy(o => o.UnitName);
+                    return View(units.ToList());
+                }
+
+            }
+            
         }
 
         // GET: Units/Details/5

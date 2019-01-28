@@ -7,6 +7,12 @@
 <h2>Юниты</h2>
 
 <p>
+	Отсортировать по: @Html.ActionLink("Дате", "Index", null, new { @class = "actionlinks" })
+	| @Html.ActionLink("Цене", "Index", new { sortOrder = 1 }, new { @class = "actionlinks" })
+	| @Html.ActionLink("Названию", "Index", new { sortOrder = 2 }, new { @class = "actionlinks" })
+</p>
+
+<p>
     @Html.ActionLink("Создать нового", "Create", null, new { @class = "actionlinks" })
 </p>
 

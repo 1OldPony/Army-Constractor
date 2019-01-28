@@ -11,13 +11,13 @@ namespace Army_Constractor.Models
         private ArmyConstractorDB db = new ArmyConstractorDB();
 
 
-        public int? ShieldPriceFromID(int? id)
+        public int ShieldPriceFromID(int? id)
         {
-            int? ShDef = db.Shields.Single(p => p.ShieldID == id).ShieldDefBonus*5;
-            return ShDef ?? 0;
+            int ShDef = db.Shields.Single(p => p.ShieldID == id).ShieldDefBonus*5;
+            return ShDef;
         }
 
-        public int? RecrutTypePriceFromID(int? id)
+        public int RecrutTypePriceFromID(int? id)
         {
             int Rank = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeRank * 10;
             int? AttBonus = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeAttBonus*5;
@@ -27,8 +27,8 @@ namespace Army_Constractor.Models
             int? Move = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeMove*2;
             int? BraveryBonus = db.RecrutTypes.Single(p => p.RecrutTypeID == id).RecrutTypeBraveryBonus * 5;
 
-            int? Total = Rank + AttBonus + DefBonus + Absorb + ArmorIgnore + Move + BraveryBonus;
-            return Total ?? 0;
+            int Total = Rank + AttBonus + DefBonus + Absorb + ArmorIgnore + Move + BraveryBonus;
+            return Total;
         }
 
         public int? ArmorPriceFromID(int? id)
